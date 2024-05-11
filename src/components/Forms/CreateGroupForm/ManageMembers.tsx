@@ -132,6 +132,7 @@ const ManageMembers = ({
 			const reader = new FileReader();
 			reader.onload = function (e) {
 				const content = e.target?.result;
+				console.log(content)
 				const lines = (content as string).split("\n").map((line) => line.split(",")[0]);
 
 				setAccountReferenceFromFile(lines)
