@@ -1,12 +1,12 @@
 import { ColumnDef } from "@tanstack/react-table";
 import {
-	Check,
-	FileSpreadsheet,
-	MoreHorizontal,
-	Tally4,
-	Tally5,
-	Timer,
-	X
+    Check,
+    FileSpreadsheet,
+    MoreHorizontal,
+    Tally4,
+    Tally5,
+    Timer,
+    X
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
@@ -16,7 +16,6 @@ import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
 import MyProblemDropdown from "../../Dropdowns/MyProblemDropdown";
 import { DataTable } from "../Prototype/DataTable";
 import DataTableSortableLayout from "../Prototype/DataTableSortableLayout";
-import DifficultyBadge from "../../DifficultyBadge";
 
 const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	{
@@ -74,30 +73,6 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 			</div>
 		),
 	},
-
-	// {
-	// 	accessorKey: "status",
-	// 	header: "Status",
-	// 	cell: ({ row }) => {
-	// 		return (
-	// 			<div className="">
-	// 				<CheckBadge checked={row.original.solution !== ""}>
-	// 					Source Code
-	// 				</CheckBadge>
-	// 				<span className="mx-1">
-	// 					<CheckBadge checked={row.original.testcases.length > 0}>
-	// 						Testcases
-	// 					</CheckBadge>
-	// 				</span>
-	// 				<CheckBadge
-	// 					checked={checkRuntimeStatus(row.original.testcases)}
-	// 				>
-	// 					No Runtime Error
-	// 				</CheckBadge>
-	// 			</div>
-	// 		);
-	// 	},
-	// },
 	{
 		accessorKey: "source_code",
 		header: () => <div className="text-center">
@@ -145,9 +120,9 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 
 	{
 		accessorKey: "allowed_languages",
-		header: "Allowed Languages",
+		header: () => <div className="text-center">Allowed Languages</div>,
 		cell: ({ row }) => (
-			<div className="font-medium">
+			<div className="font-medium flex justify-center">
 				{row.original.allowed_languages.split(",").map((lang) => (
 					<span className="mx-0.5">
 						{
@@ -160,19 +135,19 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 			</div>
 		),
 	},
+    // Temporary hide this column
+	// {
+	// 	accessorKey: "difficulty",
+	// 	header: ({ column }) => (
+	// 		<DataTableSortableLayout onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+	// 			Difficulty
+	// 		</DataTableSortableLayout>
 
-	{
-		accessorKey: "difficulty",
-		header: ({ column }) => (
-			<DataTableSortableLayout onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
-				Difficulty
-			</DataTableSortableLayout>
-
-		),
-		cell: ({ row }) => (
-			<DifficultyBadge level={row.original.difficulty}/>
-		),
-	},
+	// 	),
+	// 	cell: ({ row }) => (
+	// 		<DifficultyBadge level={row.original.difficulty}/>
+	// 	),
+	// },
 
 	{
 		accessorKey: "updated_date",
