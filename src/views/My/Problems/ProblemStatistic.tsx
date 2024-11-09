@@ -23,6 +23,7 @@ const ProblemStatistic = () => {
 		ProblemService.get(accountId, problemId)
 			.then((response) => {
 				setProblem(response.data);
+                document.title = `${response.data.title}`
 				return SubmissionService.getByCreatorProblem(
 					accountId,
 					problemId

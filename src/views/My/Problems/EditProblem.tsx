@@ -12,62 +12,73 @@ import { CreateProblemRequestForm } from "../../../types/forms/CreateProblemRequ
 import { ProblemPoplulateCreatorModel } from "../../../types/models/Problem.model";
 
 const EditProblem = () => {
-	
 	const accountId = String(localStorage.getItem("account_id"));
 
 	const { problemId } = useParams();
 	const editProblemId = String(problemId);
 
-	const [problem,setProblem] = useState<ProblemPoplulateCreatorModel>();
+	const [problem, setProblem] = useState<ProblemPoplulateCreatorModel>();
 
-	const [createRequest, setCreateRequest] = useState<CreateProblemRequestForm>();
+	const [createRequest, setCreateRequest] =
+		useState<CreateProblemRequestForm>();
 
-	const handleSave: OnProblemSaveCallback = (
-		setLoading,
-		createRequest
-	) => {
+	const handleSave: OnProblemSaveCallback = (setLoading, createRequest) => {
 		setLoading(true);
 
-		const { request,groups } = transformCreateProblemRequestForm2CreateProblemRequest(createRequest)
+		const { request, groups } =
+			transformCreateProblemRequestForm2CreateProblemRequest(
+				createRequest
+			);
 
-		ProblemService.update(
-			String(editProblemId),
-			accountId,
-			request
-		).then((response) => {
-			return ProblemService.updateGroupPermissions(response.data.problem_id,accountId,groups)
-		}).then((response) => {
-			console.log("Update Completed", response.data);
-			setLoading(false);
-			toast({
-				title: "Problem Updated",
+		ProblemService.update(String(editProblemId), accountId, request)
+			.then((response) => {
+				return ProblemService.updateGroupPermissions(
+					response.data.problem_id,
+					accountId,
+					groups
+				);
+			})
+			.then((response) => {
+				console.log("Update Completed", response.data);
+				setLoading(false);
+				toast({
+					title: "Problem Updated",
+				});
 			});
-		});
 	};
 
 	useEffect(() => {
-		ProblemService.get(accountId,editProblemId).then((response) => {
-			setProblem(response.data)
-			setCreateRequest(transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm(response.data));
+		ProblemService.get(accountId, editProblemId).then((response) => {
+			setProblem(response.data);
+			setCreateRequest(
+				transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm(
+					response.data
+				)
+			);
+            document.title = `${response.data.title} - Edit`;
 		});
-	}, []);
+
+
+	}, [accountId, editProblemId]);
 	return (
 		<NavbarSidebarLayout>
-			{createRequest && <CreateProblemForm
-				createRequestInitialValue={createRequest}
-				validatedTestcases={problem?.testcases}
-				onProblemSave={(
-					setLoading,
-				
-					createRequest
-				) =>
-					handleSave(
+			{createRequest && (
+				<CreateProblemForm
+					createRequestInitialValue={createRequest}
+					validatedTestcases={problem?.testcases}
+					onProblemSave={(
 						setLoading,
-						
+
 						createRequest
-					)
-				}
-			/>}
+					) =>
+						handleSave(
+							setLoading,
+
+							createRequest
+						)
+					}
+				/>
+			)}
 		</NavbarSidebarLayout>
 	);
 };

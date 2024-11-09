@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import { LoginContext } from "./contexts/LoginContext";
 import CourseManagement from "./views/CourseManagement";
@@ -27,14 +27,8 @@ import ViewCourseProblem from "./views/ViewCourseProblem";
 import ViewProblem from "./views/ViewProblem";
 
 const Router = () => {
-
 	// const navigate = useNavigate();
-	const {isLogin} = useContext(LoginContext);
-	useEffect(() => {
-		console.log('isLogin',isLogin)
-		if (isLogin !== null && !isLogin) {
-		}
-	},[isLogin])
+	const { isLogin } = useContext(LoginContext);
 
 	return (
 		<Routes>
@@ -44,36 +38,72 @@ const Router = () => {
 			<Route path="/login" element={<Login />} />
 			<Route path="/register" element={<Register />} />
 
-			{(isLogin !== null && !isLogin) && (<Route path="/*" element={<Login />} />)}
+			{isLogin !== null && !isLogin && (
+				<Route path="/*" element={<Login />} />
+			)}
 
-			{isLogin && (<>
-			<Route path="/dashboard" element={<Dashboard />} />
-			<Route path="/management" element={<CourseManagement />} />
+			{isLogin && (
+				<>
+					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/management" element={<CourseManagement />} />
 
-			<Route path="/my/problems" element={<MyProblems />} />
-			<Route path="/my/problems/create" element={<CreateProblem />} />
-			<Route path="/my/problems/:problemId" element={<ProblemStatistic />} />
-			<Route path="/my/problems/:problemId/edit" element={<EditProblem />} />
+					<Route path="/my/problems" element={<MyProblems />} />
+					<Route
+						path="/my/problems/create"
+						element={<CreateProblem />}
+					/>
+					<Route
+						path="/my/problems/:problemId"
+						element={<ProblemStatistic />}
+					/>
+					<Route
+						path="/my/problems/:problemId/edit"
+						element={<EditProblem />}
+					/>
 
-			<Route path="/my/collections" element={<MyCollections />} />
-			<Route path="/my/collections/create" element={<CreateCollection />} />
-			<Route path="/my/collections/:collectionId/edit" element={<EditCollection />} />
+					<Route path="/my/collections" element={<MyCollections />} />
+					<Route
+						path="/my/collections/create"
+						element={<CreateCollection />}
+					/>
+					<Route
+						path="/my/collections/:collectionId/edit"
+						element={<EditCollection />}
+					/>
 
-			<Route path="/my/courses" element={<MyCourses />} />
-			<Route path="/my/courses/create" element={<CreateCourse />} />
-			<Route path="/my/courses/:courseId/edit" element={<EditCourse />} />
+					<Route path="/my/courses" element={<MyCourses />} />
+					<Route
+						path="/my/courses/create"
+						element={<CreateCourse />}
+					/>
+					<Route
+						path="/my/courses/:courseId/edit"
+						element={<EditCourse />}
+					/>
 
-			<Route path="/my/groups" element={<MyGroups />} />
-			<Route path="/my/groups/create" element={<CreateGroup />} />
-			<Route path="/my/groups/:groupId/edit" element={<EditGroup />} />
-			
-			<Route path="/my/submissions" element={<MyPreviousSubmissions />} />
-			
-			<Route path="/problems/:problemId" element={<ViewProblem />} />
-			<Route path="/courses/:courseId" element={<ViewCourse />} />
-			<Route path="/courses/:courseId/problems/:problemId" element={<ViewCourseProblem />} />
-			</>)}
-			
+					<Route path="/my/groups" element={<MyGroups />} />
+					<Route path="/my/groups/create" element={<CreateGroup />} />
+					<Route
+						path="/my/groups/:groupId/edit"
+						element={<EditGroup />}
+					/>
+
+					<Route
+						path="/my/submissions"
+						element={<MyPreviousSubmissions />}
+					/>
+
+					<Route
+						path="/problems/:problemId"
+						element={<ViewProblem />}
+					/>
+					<Route path="/courses/:courseId" element={<ViewCourse />} />
+					<Route
+						path="/courses/:courseId/problems/:problemId"
+						element={<ViewCourseProblem />}
+					/>
+				</>
+			)}
 		</Routes>
 	);
 };
