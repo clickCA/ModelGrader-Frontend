@@ -20,7 +20,7 @@ const ExploreProblems = () => {
       console.log('prob',response.data.problems)
 			setProblems(response.data.problems);
 		});
-	}, []);
+	}, [accountId]);
 
 	return (
 		<NavbarMenuLayout>

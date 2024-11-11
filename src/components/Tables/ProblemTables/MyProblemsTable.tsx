@@ -1,12 +1,12 @@
 import { ColumnDef } from "@tanstack/react-table";
 import {
-    Check,
-    FileSpreadsheet,
-    MoreHorizontal,
-    Tally4,
-    Tally5,
-    Timer,
-    X
+	Check,
+	FileSpreadsheet,
+	MoreHorizontal,
+	Tally4,
+	Tally5,
+	Timer,
+	X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
@@ -16,12 +16,18 @@ import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
 import MyProblemDropdown from "../../Dropdowns/MyProblemDropdown";
 import { DataTable } from "../Prototype/DataTable";
 import DataTableSortableLayout from "../Prototype/DataTableSortableLayout";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../../shadcn/HoverCard";
+import { Badge } from "../../shadcn/Badge";
 
 const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	{
 		accessorKey: "title",
-		header: ({column})=>(
-			<DataTableSortableLayout onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+		header: ({ column }) => (
+			<DataTableSortableLayout
+				onClick={() =>
+					column.toggleSorting(column.getIsSorted() === "asc")
+				}
+			>
 				Title
 			</DataTableSortableLayout>
 		),
@@ -39,15 +45,19 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 
 	{
 		accessorKey: "creator",
-		header: ({column})=>(
-			<DataTableSortableLayout onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+		header: ({ column }) => (
+			<DataTableSortableLayout
+				onClick={() =>
+					column.toggleSorting(column.getIsSorted() === "asc")
+				}
+			>
 				Author
 			</DataTableSortableLayout>
 		),
 		cell: ({ row }) => {
 			return (
 				<div className="font-medium">
-						{row.original.creator.username}
+					{row.original.creator.username}
 				</div>
 			);
 		},
@@ -75,10 +85,7 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	},
 	{
 		accessorKey: "source_code",
-		header: () => <div className="text-center">
-			
-			Source Code
-			</div>,
+		header: () => <div className="text-center">Source Code</div>,
 		cell: ({ row }) => {
 			return (
 				<div className="flex justify-center">
@@ -123,19 +130,57 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 		header: () => <div className="text-center">Allowed Languages</div>,
 		cell: ({ row }) => (
 			<div className="font-medium flex justify-center">
-				{row.original.allowed_languages.split(",").map((lang) => (
-					<span className="mx-0.5">
-						{
-							ProgrammingLanguageOptions.find(
-								(option) => option.value === lang
-							)?.badge
-						}
-					</span>
-				))}
+				<div className="font-medium">
+					{row.original.allowed_languages
+						.split(",")
+						.slice(0, 2)
+						.map((lang) => (
+							<span className="mx-0.5">
+								{
+									ProgrammingLanguageOptions.find(
+										(option) => option.value === lang
+									)?.badge
+								}
+							</span>
+						))}
+
+					{row.original.allowed_languages.split(",").length > 2 && (
+						<span className="mx-0.5">
+							<HoverCard>
+								<HoverCardTrigger>
+									<Badge className="bg-neutral-200 text-black cursor-pointer">
+										...{" "}
+										{row.original.allowed_languages.split(
+											","
+										).length - 2}{" "}
+										more
+									</Badge>
+								</HoverCardTrigger>
+								<HoverCardContent>
+									<div className="flex gap-0.5">
+										{row.original.allowed_languages
+											.split(",")
+											.map((lang) => (
+												<div>
+													{
+														ProgrammingLanguageOptions.find(
+															(option) =>
+																option.value ===
+																lang
+														)?.badge
+													}
+												</div>
+											))}
+									</div>
+								</HoverCardContent>
+							</HoverCard>
+						</span>
+					)}
+				</div>
 			</div>
 		),
 	},
-    // Temporary hide this column
+	// Temporary hide this column
 	// {
 	// 	accessorKey: "difficulty",
 	// 	header: ({ column }) => (
@@ -152,10 +197,13 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	{
 		accessorKey: "updated_date",
 		header: ({ column }) => (
-			<DataTableSortableLayout onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+			<DataTableSortableLayout
+				onClick={() =>
+					column.toggleSorting(column.getIsSorted() === "asc")
+				}
+			>
 				Updated Date
 			</DataTableSortableLayout>
-
 		),
 		cell: ({ row }) => (
 			<div className="font-mono">
@@ -179,11 +227,7 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	// },
 	{
 		accessorKey: "action",
-		header: () => (
-			<div className="text-center">
-				Action
-			</div>
-		),
+		header: () => <div className="text-center">Action</div>,
 		cell: ({ row }) => (
 			<div className=" flex items-center justify-center">
 				<MyProblemDropdown problem={row.original}>
