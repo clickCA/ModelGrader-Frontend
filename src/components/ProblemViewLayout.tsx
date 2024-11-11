@@ -14,7 +14,7 @@ import TestcasesGradingIndicator from "./TestcasesGradingIndicator";
 import { Button } from "./shadcn/Button";
 import { Combobox } from "./shadcn/Combobox";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "./shadcn/Resizable";
-import DifficultyBadge from "./DifficultyBadge";
+import { Separator } from "./shadcn/Seperator";
 
 export type OnSubmitProblemViewLayoutCallback = {
     setGrading: React.Dispatch<React.SetStateAction<boolean>>
@@ -115,14 +115,17 @@ const ProblemViewLayout = ({
 							</p>
 						</div>
 
-						<div className="flex">
+						{/* <div className="flex">
 							<b className="mr-2">Difficulty</b>
 							<p className="">
 								<DifficultyBadge level={problem?.difficulty}/>
 							</p>
-						</div>
+						</div> */}
 					</div>
 				</div>
+                <div className="mt-[8px] mb-[16px]">
+                    <Separator orientation="horizontal"/>
+                </div>
 				<div>
 					{problem && (
 						<ReadOnlyPlate
@@ -131,7 +134,7 @@ const ProblemViewLayout = ({
 									String(problem.description)
 								)
 							)}
-							className="h-[70vh] xl:h-[80vh]"
+							className="h-[65vh] xl:h-[75vh]"
 						/>
 					)}
 				</div>

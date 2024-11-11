@@ -25,7 +25,7 @@ const ExploreProblems = () => {
 	return (
 		<NavbarMenuLayout>
 			<div className="mx-auto w-[90%] mt-10">
-				<h1 className="text-3xl font-bold">Explore Public Problems</h1>
+				<h1 className="text-3xl font-bold">Explore Problems</h1>
 				<div>
 					<CardContainer className="w-4/4">
 						{/* {problems.map((problem) => (
