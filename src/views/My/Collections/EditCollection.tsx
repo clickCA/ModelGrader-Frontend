@@ -50,7 +50,7 @@ const EditCollection = () => {
 				);
 			})
             .then(() => {
-				let promise = [];
+				const promise = [];
 				for (const problem of problemGroupPermissions) {
 					promise.push(
 						ProblemService.updateGroupPermissions(
