@@ -16,7 +16,11 @@ import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
 import MyProblemDropdown from "../../Dropdowns/MyProblemDropdown";
 import { DataTable } from "../Prototype/DataTable";
 import DataTableSortableLayout from "../Prototype/DataTableSortableLayout";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../../shadcn/HoverCard";
+import {
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
+} from "../../shadcn/HoverCard";
 import { Badge } from "../../shadcn/Badge";
 
 const columns: ColumnDef<ProblemPopulateTestcases>[] = [
@@ -35,7 +39,10 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 			return (
 				<div className="font-mono flex items-center py-2 hover:underline hover:text-green-500">
 					<FileSpreadsheet className="mr-2 text-blue-400" size={20} />
-					<Link to={`/my/problems/${row.original.problem_id}`}>
+					<Link
+						target="_blank"
+						to={`/my/problems/${row.original.problem_id}`}
+					>
 						{row.original.title}
 					</Link>
 				</div>
@@ -120,7 +127,10 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 		cell: ({ row }) => (
 			<div className="font-medium">
 				<Timer className="inline-block mr-2" size={20} />
-				{row.original.time_limit}
+				<span className="text-neutral-700">
+					{row.original.time_limit.toFixed(3)}{" "}
+					<span className="text-neutral-400">ms</span>
+				</span>
 			</div>
 		),
 	},

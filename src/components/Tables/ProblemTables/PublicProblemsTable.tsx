@@ -7,9 +7,9 @@ import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
 import { Badge } from "../../shadcn/Badge";
 import { Button } from "../../shadcn/Button";
 import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
 } from "../../shadcn/HoverCard";
 import { DataTable } from "../Prototype/DataTable";
 
@@ -34,7 +34,10 @@ const PublicProblemsTable = ({
 								className="mr-2 text-blue-400"
 								size={20}
 							/>
-							<Link to={`/problems/${row.original.problem_id}`}>
+							<Link
+								to={`/problems/${row.original.problem_id}`}
+								target="_blank"
+							>
 								{row.original.title}
 							</Link>
 						</div>
@@ -132,7 +135,7 @@ const PublicProblemsTable = ({
 				),
 			},
 
-            {
+			{
 				accessorKey: "author",
 				header: "Author",
 				cell: ({ row }) => (
@@ -166,6 +169,7 @@ const PublicProblemsTable = ({
 				cell: ({ row }) => (
 					<div className="flex items-center">
 						<Link
+							target="_blank"
 							to={
 								courseId
 									? `/courses/${courseId}/problems/${row.original.problem_id}`

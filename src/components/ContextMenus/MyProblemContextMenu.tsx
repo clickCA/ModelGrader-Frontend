@@ -36,7 +36,7 @@ const MyProblemContextMenu = ({
 			problem.problem_id
 		);
 
-		let createRequest = transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm(
+		const createRequest = transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm(
 			response.data
 		)
 

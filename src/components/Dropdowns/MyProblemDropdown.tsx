@@ -3,21 +3,21 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ProblemService } from "../../services/Problem.service";
 import { transformCreateProblemRequestForm2CreateProblemRequest } from "../../types/adapters/CreateProblemRequestForm.adapter";
+import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "../../types/adapters/Problem.adapter";
 import {
-	ProblemModel,
-	ProblemPopulateTestcases,
-	ProblemSecureModel,
+    ProblemModel,
+    ProblemPopulateTestcases,
+    ProblemSecureModel,
 } from "../../types/models/Problem.model";
 import DeleteProblemConfirmationDialog from "../Dialogs/DeleteProblemConfirmationDialog";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "../shadcn/DropdownMenu";
 import { toast } from "../shadcn/UseToast";
-import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "../../types/adapters/Problem.adapter";
 
 const MyProblemDropdown = ({
 	children,
@@ -36,11 +36,12 @@ const MyProblemDropdown = ({
 			problem.problem_id
 		);
 
-		let createRequest = transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm(
-			response.data
-		)
+		const createRequest =
+			transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm(
+				response.data
+			);
 
-		createRequest.title += " (Copy)"
+		createRequest.title += " (Copy)";
 
 		const { request, groups } =
 			transformCreateProblemRequestForm2CreateProblemRequest(
@@ -60,7 +61,10 @@ const MyProblemDropdown = ({
 				toast({
 					title: `Cloned ${response.data.title}`,
 				});
-				window.open(`/my/problems/${response.data.problem_id}`, "_blank");
+				window.open(
+					`/my/problems/${response.data.problem_id}`,
+					"_blank"
+				);
 			});
 	};
 
@@ -88,9 +92,11 @@ const MyProblemDropdown = ({
 				</DropdownMenuItem>
 				<DropdownMenuItem
 					onClick={() =>
-						window.open(`/my/problems/${problem.problem_id}/edit`, "_blank")
+						window.open(
+							`/my/problems/${problem.problem_id}/edit`,
+							"_blank"
+						)
 					}
-					
 				>
 					<PencilIcon className="mr-2" size={16} />
 					Edit Problem

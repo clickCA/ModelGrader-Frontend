@@ -16,8 +16,10 @@ export const SubmissionService: SubmissionServiceAPI = {
         return response;
     },
 
-    getByCreatorProblem: async (accountId, problemId) => {
-        const response = await axios.get<GetSubmissionsByCretorProblemResponse>(`${BASE_URL}/api/accounts/${accountId}/problems/${problemId}/submissions`);
+    getByCreatorProblem: async (accountId, problemId, options) => {
+        const response = await axios.get<GetSubmissionsByCretorProblemResponse>(`${BASE_URL}/api/accounts/${accountId}/problems/${problemId}/submissions`, {
+            params: options
+        });
         return response;
     },
 

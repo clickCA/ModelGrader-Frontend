@@ -70,45 +70,55 @@ const ManageProblems = ({
 		});
 	}, [selectedProblemsSortable]);
 
-	const [filteredProblems, setFilteredProblems] = useState<ProblemItemInterface[]>([]);
+	const [filteredProblems, setFilteredProblems] = useState<
+		ProblemItemInterface[]
+	>([]);
 	const [searchValue, setSearchValue] = useState("");
 
 	useEffect(() => {
 		setFilteredProblems(
 			allProblemsSortable.filter(
-				(item) => searchValue === "" || item.problem.title.includes(searchValue)
+				(item) =>
+					searchValue === "" ||
+					item.problem.title.includes(searchValue)
 			)
 		);
-	},[searchValue, allProblemsSortable])
+	}, [searchValue, allProblemsSortable]);
 
 	useEffect(() => {
-		ProblemService.getAllAsCreator(accountId,{end:10}).then((response) => {
-			setAllProblems(
-				transformProblemModel2ProblemHashedTable(response.data.problems)
-			);
-			setAllProblemsSortable(
-				response.data.problems.map((problem) => ({
-					id: problem.problem_id,
-					name: problem.title,
-					problem: problem,
-					groupPermissions: [],
-				}))
-			);
+		ProblemService.getAllAsCreator(accountId, { end: 10 })
+			.then((response) => {
+				setAllProblems(
+					transformProblemModel2ProblemHashedTable(
+						response.data.problems
+					)
+				);
+				setAllProblemsSortable(
+					response.data.problems.map((problem) => ({
+						id: problem.problem_id,
+						name: problem.title,
+						problem: problem,
+						groupPermissions: [],
+					}))
+				);
 
-			return ProblemService.getAllAsCreator(accountId)
-		}).then((response) => {
-			setAllProblems(
-				transformProblemModel2ProblemHashedTable(response.data.problems)
-			);
-			setAllProblemsSortable(
-				response.data.problems.map((problem) => ({
-					id: problem.problem_id,
-					name: problem.title,
-					problem: problem,
-					groupPermissions: [],
-				}))
-			);
-		});
+				return ProblemService.getAllAsCreator(accountId);
+			})
+			.then((response) => {
+				setAllProblems(
+					transformProblemModel2ProblemHashedTable(
+						response.data.problems
+					)
+				);
+				setAllProblemsSortable(
+					response.data.problems.map((problem) => ({
+						id: problem.problem_id,
+						name: problem.title,
+						problem: problem,
+						groupPermissions: [],
+					}))
+				);
+			});
 	}, [accountId]);
 
 	useEffect(() => {
@@ -124,8 +134,6 @@ const ManageProblems = ({
 
 	useEffect(() => {
 		if (initial) {
-			console.log("AAA",createRequest)
-			// setSelectedProblemsSortable(createRequest.problemsInterface);
 			setSelectedProblemsSortable(
 				createRequest.problemsInterface?.map((cp) => ({
 					id: cp.problem.problem_id,
@@ -162,11 +170,18 @@ const ManageProblems = ({
 									{selectedProblemsSortable?.map((item) => (
 										<MyProblemMiniCard2
 											disabledHighlight
-											onClick={() =>
+											onClickXIcon={() =>
 												handleRemoveSelectedProblem(
 													item.id as string
 												)
 											}
+											onClickPencilIcon={() => {
+												const win = window.open(
+													`/my/problems/${item.problem.problem_id}/edit`,
+													"_blank"
+												);
+												if (win) win.focus();
+											}}
 											key={item.id}
 											problem={item.problem}
 										/>
@@ -182,7 +197,11 @@ const ManageProblems = ({
 				</div>
 
 				<div className="w-1/2">
-					<Input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className="mt-2" />
+					<Input
+						value={searchValue}
+						onChange={(e) => setSearchValue(e.target.value)}
+						className="mt-2"
+					/>
 					<ScrollArea className="mt-6 h-[80vh] md:h-[60vh] pr-5">
 						<ReactSortable
 							group={{

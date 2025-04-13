@@ -10,7 +10,7 @@ import {
 	useReactTable,
 } from "@tanstack/react-table";
 
-import { DataTablePagination } from "./DataTablePagination";
+import { useState } from "react";
 import {
 	Table,
 	TableBody,
@@ -19,7 +19,6 @@ import {
 	TableHeader,
 	TableRow,
 } from "../../shadcn/Table";
-import { useState } from "react";
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];
@@ -100,7 +99,7 @@ export function DataTable<TData, TValue>({
 				</Table>
 			</div>
 			<div className="mt-3">
-				<DataTablePagination table={table} />
+				{/* <DataTablePagination table={table} /> */}
 			</div>
 			{/* <div className="flex items-center justify-end space-x-2 py-4">
 				<Button
