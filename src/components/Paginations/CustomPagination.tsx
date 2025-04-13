@@ -1,8 +1,8 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "../shadcn/Button";
 import { Pagination } from "../../types/Pagination.type";
+import { Button } from "../shadcn/Button";
 
 const CustomPagination = ({
 	pagination,
