@@ -8,6 +8,9 @@ import { SubmissionService } from "../../../services/Submission.service";
 import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "../../../types/models/Problem.model";
 import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "../../../types/models/Submission.model";
 import { ProblemService } from "./../../../services/Problem.service";
+import { Pagination } from "../../../types/Pagination.type";
+import { PaginationInitalValue } from "../../../constants/Pagination";
+import CustomPagination from "../../../components/Paginations/CustomPagination";
 
 const ProblemStatistic = () => {
 	const { problemId } = useParams();
@@ -17,6 +20,9 @@ const ProblemStatistic = () => {
 		useState<ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel>();
 	const [submissions, setSubmissions] =
 		useState<SubmissionPopulateSubmissionTestcaseAndAccountModel[]>();
+	const [pagination, setPagination] = useState<Pagination>(
+		PaginationInitalValue
+	);
 
 	const loadSubmissions = () => {
 		if (!problemId) return;
@@ -26,15 +32,48 @@ const ProblemStatistic = () => {
 				document.title = `${response.data.title}`;
 				return SubmissionService.getByCreatorProblem(
 					accountId,
-					problemId
+					problemId,
+					{
+						start: pagination.start,
+						end: pagination.end,
+					}
 				);
 			})
 			.then((response) => {
 				setSubmissions(response.data.submissions);
+				setPagination({
+					...pagination,
+					total: response.data.total,
+				});
 			});
 	};
 
-	useEffect(loadSubmissions, [accountId, problemId]);
+	const handleNextClick = () => {
+		if (pagination.end < pagination.total) {
+			setPagination((prev) => {
+				const newStart = prev.start + 10;
+				const newEnd = prev.end + 10;
+				return { ...prev, start: newStart, end: newEnd };
+			});
+		}
+	};
+
+	const handlePreviousClick = () => {
+		if (pagination.start > 0) {
+			setPagination((prev) => {
+				const newStart = prev.start - 10;
+				const newEnd = prev.end - 10;
+				return { ...prev, start: newStart, end: newEnd };
+			});
+		}
+	};
+
+	useEffect(loadSubmissions, [
+		accountId,
+		problemId,
+		pagination.start,
+		pagination.end,
+	]);
 
 	return (
 		<NavbarSidebarLayout>
@@ -62,6 +101,14 @@ const ProblemStatistic = () => {
 							problem={problem}
 						/>
 					)}
+				</div>
+
+				<div className="flex justify-end">
+					<CustomPagination
+						pagination={pagination}
+						onNextClick={handleNextClick}
+						onPreviousClick={handlePreviousClick}
+					/>
 				</div>
 			</div>
 		</NavbarSidebarLayout>

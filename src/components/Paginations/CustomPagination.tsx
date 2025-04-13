@@ -11,8 +11,8 @@ const CustomPagination = ({
 	disabled = false,
 }: {
 	pagination: Pagination;
-	onNextClick: () => void;
-	onPreviousClick: () => void;
+	onNextClick?: () => void;
+	onPreviousClick?: () => void;
 	disabled?: boolean;
 }) => {
 	const { start, end, total } = pagination;
