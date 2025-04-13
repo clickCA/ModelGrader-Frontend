@@ -39,7 +39,10 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 			return (
 				<div className="font-mono flex items-center py-2 hover:underline hover:text-green-500">
 					<FileSpreadsheet className="mr-2 text-blue-400" size={20} />
-					<Link to={`/my/problems/${row.original.problem_id}`}>
+					<Link
+						target="_blank"
+						to={`/my/problems/${row.original.problem_id}`}
+					>
 						{row.original.title}
 					</Link>
 				</div>

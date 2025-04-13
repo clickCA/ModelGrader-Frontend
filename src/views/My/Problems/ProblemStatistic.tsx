@@ -23,7 +23,7 @@ const ProblemStatistic = () => {
 		ProblemService.get(accountId, problemId)
 			.then((response) => {
 				setProblem(response.data);
-                document.title = `${response.data.title}`
+				document.title = `${response.data.title}`;
 				return SubmissionService.getByCreatorProblem(
 					accountId,
 					problemId
@@ -43,7 +43,10 @@ const ProblemStatistic = () => {
 
 				<div className="mb-5 flex justify-end gap-10 items-center">
 					<div>
-						<Link to={`/my/problems/${problemId}/edit`}>
+						<Link
+							target="_blank"
+							to={`/my/problems/${problemId}/edit`}
+						>
 							<Button>
 								<Pencil size={20} className="mr-2" />
 								Edit Problem

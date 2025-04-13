@@ -22,7 +22,10 @@ const MyCoursesTable = ({
 							className="mr-2 text-purple-400"
 							size={20}
 						/>
-						<Link to={`/my/courses/${row.original.topic_id}/edit`}>
+						<Link
+							to={`/my/courses/${row.original.topic_id}/edit`}
+							target="_blank"
+						>
 							{row.original.name}
 						</Link>
 					</div>
@@ -33,30 +36,23 @@ const MyCoursesTable = ({
 				header: "Collections",
 				cell: ({ row }) => (
 					<div className="flex items-center font-medium">
-						<Folder
-							className="mr-2 text-yellow-400"
-							size={20}
-						/>
+						<Folder className="mr-2 text-yellow-400" size={20} />
 						{row.original.collections.length}
 					</div>
 				),
 			},
-            {
-                accessorKey: "updated_date",
-                header: "Updated Date",
-                cell: ({ row }) => (
-                    <div className="font-mono">
-                        {readableDateFormat(row.original.updated_date)}
-                    </div>
-                ),
-            },
 			{
-				accessorKey: "action",
-				header: () => (
-					<div className="text-center">
-						Action
+				accessorKey: "updated_date",
+				header: "Updated Date",
+				cell: ({ row }) => (
+					<div className="font-mono">
+						{readableDateFormat(row.original.updated_date)}
 					</div>
 				),
+			},
+			{
+				accessorKey: "action",
+				header: () => <div className="text-center">Action</div>,
 				cell: ({ row }) => (
 					<div className=" flex items-center justify-center">
 						<MyCourseDropdown course={row.original}>
