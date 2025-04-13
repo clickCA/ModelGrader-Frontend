@@ -1,6 +1,11 @@
 import { FileDown } from "lucide-react";
 import { RuntimeResult } from "../types/apis/Problem.api";
-import { ProblemModel, TestcaseModel } from "../types/models/Problem.model";
+import {
+	ProblemModel,
+	ProblemPopulateTestcases,
+	TestcaseModel,
+} from "../types/models/Problem.model";
+import { convertToSnakeCase } from "../utilities/String";
 import {
 	Accordion,
 	AccordionContent,
@@ -9,8 +14,6 @@ import {
 } from "./shadcn/Accordion";
 import { Badge } from "./shadcn/Badge";
 import { Label } from "./shadcn/Label";
-import { Textarea } from "./shadcn/Textarea";
-import { convertToSnakeCase } from "../utilities/String";
 import RuntimeOutputTextarea from "./Textareas/RuntimeOutputTextarea";
 
 const minimizer = (text: string | null): string => {
@@ -35,7 +38,7 @@ const DownloadMiniButton = ({
 			className="flex items-center cursor-pointer hover:text-green-500"
 			{...args}
 		>
-			<FileDown size={16} className="mr-1" /> Download .txt
+			<FileDown size={16} className="mr-1" /> Download
 		</p>
 	);
 };
@@ -45,6 +48,7 @@ const TestcaseValidationInstance = ({
 	value,
 	inputValue,
 	outputValue,
+	expectedOutputValue,
 	status,
 	index,
 }: {
@@ -52,6 +56,7 @@ const TestcaseValidationInstance = ({
 	value: string;
 	inputValue: string;
 	outputValue: string | null;
+	expectedOutputValue: string | null;
 	status: string;
 	index: number;
 }) => {
@@ -68,9 +73,9 @@ const TestcaseValidationInstance = ({
 		const element = document.createElement("a");
 		const file = new Blob([text], { type: "text/plain" });
 		element.href = URL.createObjectURL(file);
-		element.download = `${problem.problem_id}_${convertToSnakeCase(
-			problem.title
-		)}_${type}_${index + 1}.txt`;
+		element.download = `${convertToSnakeCase(problem.title)}_${type}_${
+			index + 1
+		}.txt`;
 		document.body.appendChild(element); // Required for this to work in FireFox
 		element.click();
 	};
@@ -90,57 +95,75 @@ const TestcaseValidationInstance = ({
 				)}
 			</AccordionTrigger>
 			<AccordionContent>
-				<div className="flex gap-5 px-1">
-					<div className="w-1/2">
-						<div className="flex justify-between">
-							<Label>Input</Label>
-							<DownloadMiniButton
+				<div className="ml-2">
+					<div className="gap-5 px-1">
+						<div className="w-1/2 pr-3">
+							<div className="flex justify-between">
+								<Label>Input</Label>
+								<DownloadMiniButton
+									onClick={() =>
+										downloadTextfile("input", inputValue)
+									}
+								/>
+							</div>
+							<RuntimeOutputTextarea
+								className="mt-1 font-mono cursor-pointer"
+								// value={inputValue}
+								value={minimizer(inputValue)}
 								onClick={() =>
-									downloadTextfile("input", inputValue)
+									navigator.clipboard.writeText(
+										inputValue ?? ""
+									)
 								}
 							/>
 						</div>
-						<Textarea
-							rows={minimizer(inputValue)?.split("\n").length}
-							readOnly
-							className="mt-1 font-mono cursor-pointer"
-							value={minimizer(inputValue)}
-							onClick={() =>
-								navigator.clipboard.writeText(inputValue)
-							}
-						/>
 					</div>
-					<div className="w-1/2">
-						<div className="flex justify-between">
-							<Label>Output</Label>
-							<DownloadMiniButton
+					<div className="flex gap-5 mt-3">
+						<div className="w-1/2">
+							<div className="flex justify-between">
+								<Label>Output</Label>
+								<DownloadMiniButton
+									onClick={() =>
+										downloadTextfile("output", outputValue)
+									}
+								/>
+							</div>
+							<RuntimeOutputTextarea
+								className="mt-1 font-mono cursor-pointer"
+								value={minimizer(outputValue)}
+								compareValue={minimizer(expectedOutputValue)}
 								onClick={() =>
-									downloadTextfile("output", outputValue)
+									navigator.clipboard.writeText(
+										outputValue ?? ""
+									)
 								}
 							/>
 						</div>
-						<RuntimeOutputTextarea
-							rows={minimizer(outputValue)?.split("\n").length}
-							readOnly
-							className="mt-1 font-mono cursor-pointer"
-							// value={minimizer(outputValue)}
-							onClick={() =>
-								navigator.clipboard.writeText(outputValue ?? "")
-							}
-						/>
+						<div className="w-1/2">
+							<div className="flex justify-between">
+								<Label>Expected Output</Label>
+								<DownloadMiniButton
+									onClick={() =>
+										downloadTextfile(
+											"expected_output",
+											expectedOutputValue
+										)
+									}
+								/>
+							</div>
+							<RuntimeOutputTextarea
+								className="mt-1 font-mono cursor-pointer"
+								// value={minimizer(outputValue)}
+								value={minimizer(expectedOutputValue)}
+								compareValue={minimizer(outputValue)}
+								onClick={() =>
+									navigator.clipboard.writeText(
+										expectedOutputValue ?? ""
+									)
+								}
+							/>
+						</div>
 					</div>
-					{/* <div className="w-2/12">
-						<Label>Runtime Status</Label>
-						<p
-							className={`text-xl font-bold text-${
-								TestcaseStatusIndicatorColor[
-									status as TestcaseGradingResultStatus
-								]
-							}`}
-						>
-							{status}
-						</p>
-					</div> */}
 				</div>
 			</AccordionContent>
 		</AccordionItem>
@@ -151,7 +174,7 @@ const TestcaseValidationAccordian = ({
 	problem,
 	runtimeResults = [],
 }: {
-	problem: ProblemModel;
+	problem: ProblemPopulateTestcases;
 	runtimeResults?: RuntimeResult[] | TestcaseModel[];
 }) => {
 	return (
@@ -164,6 +187,7 @@ const TestcaseValidationAccordian = ({
 					value={String(index + 1)}
 					inputValue={result.input}
 					outputValue={result.output}
+					expectedOutputValue={problem.testcases[index]?.output}
 					status={
 						result.runtime_status ? result.runtime_status : "OK"
 					}

@@ -1,50 +1,44 @@
-import { useEffect, useMemo } from "react";
-import { Textarea } from "../shadcn/Textarea";
+import { useMemo } from "react";
+import { cn } from "../../lib/utils";
 import { Card } from "../shadcn/Card";
 
 const RuntimeOutputTextarea = ({
-	value = "second(s): 3661 => 1 hour(s): 1 minute(s): 1 second(s)\r\n",
-	rows = 5,
-	readOnly = false,
+	value = "",
+	compareValue = "",
 	className = "",
 	onClick = () => {},
 }: {
 	value?: string | null;
-	rows?: number;
-	readOnly?: boolean;
+	compareValue?: string | null;
 	className?: string;
 	onClick?: () => void;
 }) => {
-	useEffect(() => {
-		console.log("String.raw`${value}`", JSON.stringify(value));
-	}, [value]);
-
 	const displayValue = useMemo(() => {
-		const text = JSON.stringify(value).slice(1, -1);
+		const text = value || ""; // JSON.stringify(value).slice(1, -1);
+		const compareText: string[] | null = compareValue
+			? compareValue.split("")
+			: null;
 
-		const result = text.split(/(\r?\n)/)
+		return text.split("").map((char, i, textList) => {
+			let base = "";
 
-        const bytes = new TextEncoder().encode(text);
+			if (compareText && textList[i] !== compareText[i]) {
+				base = "bg-yellow-300";
+			}
 
-        const mapped = Array.from(bytes).map(byte => {
-            // Do whatever you want with each byte
-            return byte;
-        });
-		// const result = text.split("").map((char, index) => {
-		// 	if (char === "\n") {
-		// 		return <span className="text-blue-500">{char}</span>;
-		// 	} else if (char === "\r") {
-		// 		return <span className="text-red-500">{char}</span>;
-		// 	} else {
-		// 		return <span key={index}>{char}</span>;
-		// 	}
-		// });
-
-		console.log(mapped);
-		console.log(text.split(""));
-
-		return "Hi";
-	}, [value]);
+			if (char === "\n") {
+				return <span className={cn(base, "text-blue-500")}>\n</span>;
+			} else if (char === "\r") {
+				return <span className={cn(base, "text-red-500")}>\r</span>;
+			} else {
+				return (
+					<span className={base} key={i}>
+						{char}
+					</span>
+				);
+			}
+		});
+	}, [value, compareValue]);
 
 	return (
 		// <Textarea
@@ -54,7 +48,10 @@ const RuntimeOutputTextarea = ({
 		// 	onClick={onClick}
 		// 	value={JSON.stringify(value)}
 		// />
-		<Card className="px-4 py-2">
+		<Card
+			className={cn("px-4 py-2 min-h-[80px]", className)}
+			onClick={onClick}
+		>
 			<div className="font-mono">{displayValue}</div>
 		</Card>
 	);
