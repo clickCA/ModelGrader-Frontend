@@ -11,6 +11,7 @@ import { Badge } from "./shadcn/Badge";
 import { Label } from "./shadcn/Label";
 import { Textarea } from "./shadcn/Textarea";
 import { convertToSnakeCase } from "../utilities/String";
+import RuntimeOutputTextarea from "./Textareas/RuntimeOutputTextarea";
 
 const minimizer = (text: string | null): string => {
 	const LIMIT = 250;
@@ -118,11 +119,11 @@ const TestcaseValidationInstance = ({
 								}
 							/>
 						</div>
-						<Textarea
+						<RuntimeOutputTextarea
 							rows={minimizer(outputValue)?.split("\n").length}
 							readOnly
 							className="mt-1 font-mono cursor-pointer"
-							value={minimizer(outputValue)}
+							// value={minimizer(outputValue)}
 							onClick={() =>
 								navigator.clipboard.writeText(outputValue ?? "")
 							}
