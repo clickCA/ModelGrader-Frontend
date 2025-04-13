@@ -8,18 +8,23 @@ const CustomPagination = ({
 	pagination,
 	onNextClick,
 	onPreviousClick,
-    disabled = false,
+	disabled = false,
 }: {
 	pagination: Pagination;
 	onNextClick: () => void;
 	onPreviousClick: () => void;
-    disabled?: boolean;
+	disabled?: boolean;
 }) => {
 	const { start, end, total } = pagination;
 
 	const isFirstPage = useMemo(() => start === 0, [start]);
 	const isLastPage = useMemo(() => end >= total, [end, total]);
 	const currentPage = useMemo(() => Math.floor(start / 10) + 1, [start]);
+	const pageSize = useMemo(() => end - start, [end, start]);
+	const totalPages = useMemo(
+		() => Math.ceil(total / pageSize),
+		[total, pageSize]
+	);
 
 	return (
 		<div className="flex items-center justify-between gap-4 px-4 py-2">
@@ -36,7 +41,7 @@ const CustomPagination = ({
 
 			<div className="cursor-pointer text-base">
 				<span>
-					{currentPage} / {total}
+					{currentPage} / {totalPages}
 				</span>
 			</div>
 

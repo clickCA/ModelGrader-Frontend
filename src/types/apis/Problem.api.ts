@@ -5,7 +5,7 @@ import {
 	ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel,
 	ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel,
 	ProblemPopulateCreatorSecureModel,
-	ProblemPopulateTestcases
+	ProblemPopulateTestcases,
 } from "../models/Problem.model";
 
 export type CreateProblemRequest = {
@@ -60,7 +60,8 @@ export type GetAllProblemsQuery = {
 	start?: number;
 	end?: number;
 	account_id?: string;
-}
+	query?: string;
+};
 
 export type GetAllProblemsResponse = {
 	problems: ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel[];
@@ -82,7 +83,9 @@ export type ProblemServiceAPI = {
 		accountId: string,
 		request: CreateProblemRequest
 	) => Promise<AxiosResponse<ProblemModel>>;
-	getAll: (query?: GetAllProblemsQuery) => Promise<AxiosResponse<GetAllProblemsResponse>>;
+	getAll: (
+		query?: GetAllProblemsQuery
+	) => Promise<AxiosResponse<GetAllProblemsResponse>>;
 	getAllAsCreator: (
 		accountId: string,
 		query?: GetAllProblemsQuery
@@ -99,8 +102,10 @@ export type ProblemServiceAPI = {
 		request: UpdateProblemRequest | CreateProblemRequest
 	) => Promise<AxiosResponse<ProblemModel>>;
 	// deleteMultiple: (problemIds:string[]) => Promise<AxiosResponse<null>>;
-	delete: (problemId: string,
-		accountId: string) => Promise<AxiosResponse<null>>;
+	delete: (
+		problemId: string,
+		accountId: string
+	) => Promise<AxiosResponse<null>>;
 	updateGroupPermissions: (
 		problemId: string,
 		accountId: string,
@@ -111,5 +116,7 @@ export type ProblemServiceAPI = {
 	validateProgram: (
 		request: ValidateProgramRequest
 	) => Promise<AxiosResponse<ValidateProgramResponse>>;
-	getPublic: (problemId: string) => Promise<AxiosResponse<ProblemPopulateCreatorSecureModel>>;
+	getPublic: (
+		problemId: string
+	) => Promise<AxiosResponse<ProblemPopulateCreatorSecureModel>>;
 };

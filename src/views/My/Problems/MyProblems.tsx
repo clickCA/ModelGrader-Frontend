@@ -11,21 +11,21 @@ import { NavSidebarContext } from "../../../contexts/NavSidebarContext";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { ProblemService } from "../../../services/Problem.service";
 import { Pagination } from "../../../types/Pagination.type";
-import { ProblemCountTestcases } from "../../../types/models/Problem.model";
+import { ProblemPopulateTestcases } from "../../../types/models/Problem.model";
 
 const MyProblems = () => {
 	const accountId = String(localStorage.getItem("account_id"));
 	const navigate = useNavigate();
 
-	const [problems, setProblems] = useState<ProblemCountTestcases[]>([]);
+	const [problems, setProblems] = useState<ProblemPopulateTestcases[]>([]);
 	const [manageableProblems, setManageableProblems] = useState<
-		ProblemCountTestcases[]
+		ProblemPopulateTestcases[]
 	>([]);
 	const [filteredProblems, setFilteredProblems] = useState<
-		ProblemCountTestcases[]
+		ProblemPopulateTestcases[]
 	>([]);
 	const [filteredManageableProblems, setFilteredManageableProblems] =
-		useState<ProblemCountTestcases[]>([]);
+		useState<ProblemPopulateTestcases[]>([]);
 	const [problemPagination, setProblemPagination] = useState<Pagination>({
 		start: 0,
 		end: 10,
@@ -39,25 +39,8 @@ const MyProblems = () => {
 	const [searchValue, setSearchValue] = useState("");
 
 	useEffect(() => {
-		if (!searchValue || searchValue === "") {
-			setFilteredProblems(problems);
-			setFilteredManageableProblems(manageableProblems);
-		} else {
-			setFilteredProblems(
-				problems.filter((problem) =>
-					problem.title
-						.toLowerCase()
-						.includes(searchValue.toLowerCase())
-				)
-			);
-			setFilteredManageableProblems(
-				manageableProblems.filter((problem) =>
-					problem.title
-						.toLowerCase()
-						.includes(searchValue.toLowerCase())
-				)
-			);
-		}
+		setFilteredProblems(problems);
+		setFilteredManageableProblems(manageableProblems);
 	}, [searchValue, problems, manageableProblems]);
 
 	useEffect(() => {
@@ -65,6 +48,7 @@ const MyProblems = () => {
 		ProblemService.getAllAsCreator(accountId, {
 			start: problemPagination.start,
 			end: problemPagination.end,
+			query: searchValue || "",
 		}).then((response) => {
 			setProblems(response.data.problems);
 			setManageableProblems(response.data.manageable_problems);
@@ -76,13 +60,18 @@ const MyProblems = () => {
 		});
 
 		setSection("PROBLEMS");
-	}, [accountId, problemPagination.start, problemPagination.end]);
+	}, [
+		accountId,
+		problemPagination.start,
+		problemPagination.end,
+		searchValue,
+	]);
 
 	const handleNextClick = () => {
 		if (problemPagination.end < problemPagination.total) {
 			setProblemPagination((prev) => {
 				const newStart = prev.start + 10;
-				const newEnd = Math.min(prev.end + 10, prev.total);
+				const newEnd = prev.end + 10;
 				return { ...prev, start: newStart, end: newEnd };
 			});
 		}
@@ -91,7 +80,7 @@ const MyProblems = () => {
 	const handlePreviousClick = () => {
 		if (problemPagination.start > 0) {
 			setProblemPagination((prev) => {
-				const newStart = Math.max(prev.start - 10, 0);
+				const newStart = prev.start - 10;
 				const newEnd = prev.end - 10;
 				return { ...prev, start: newStart, end: newEnd };
 			});
