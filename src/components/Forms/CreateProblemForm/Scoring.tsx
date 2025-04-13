@@ -54,7 +54,6 @@ const Scoring = ({
 	};
 
 	useEffect(() => {
-		console.log(createRequest)
 		if (createRequest.language) {
 			setSelectedLanguage(createRequest.language);
 		}
@@ -136,6 +135,10 @@ const Scoring = ({
 					{((displayResult && validationResult) ||
 						createRequest.validated_testcases) && (
 						<TestcaseValidationAccordion
+							problem={{
+								...createRequest,
+								testcases: [],
+							}}
 							runtimeResults={
 								validationResult?.runtime_results
 									? validationResult.runtime_results

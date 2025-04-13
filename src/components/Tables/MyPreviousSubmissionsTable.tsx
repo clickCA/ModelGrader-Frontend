@@ -20,6 +20,7 @@ const MyPreviousSubmissionsTable = ({
 				cell: ({ row }) => (
 					<div className="font-medium py-2 hover:underline hover:text-green-500">
 						<Link
+							target="_blank"
 							to={
 								row.original.topic
 									? `/courses/${row.original.topic.topic_id}/problems/${row.original.problem.problem_id}`
@@ -38,8 +39,12 @@ const MyPreviousSubmissionsTable = ({
 					<div className="">
 						{row.original.topic ? (
 							<div className="font-medium hover:underline hover:text-green-500 flex items-center">
-								<LibraryBig size={20} className="text-purple-400 mr-1"/>
+								<LibraryBig
+									size={20}
+									className="text-purple-400 mr-1"
+								/>
 								<Link
+									target="_blank"
 									to={`/courses/${row.original.topic.topic_id}`}
 								>
 									{row.original.topic.name}
@@ -69,10 +74,7 @@ const MyPreviousSubmissionsTable = ({
 			},
 			{
 				accessorKey: "is_passed",
-				header: () => <div className="text-center">
-					
-					Is Passed
-					</div>,
+				header: () => <div className="text-center">Is Passed</div>,
 				cell: ({ row }) => {
 					return (
 						<div className="flex justify-center">
