@@ -1,10 +1,6 @@
 import { FileDown } from "lucide-react";
 import { RuntimeResult } from "../types/apis/Problem.api";
-import {
-	ProblemModel,
-	ProblemPopulateTestcases,
-	TestcaseModel,
-} from "../types/models/Problem.model";
+import { TestcaseModel } from "../types/models/Problem.model";
 import { convertToSnakeCase } from "../utilities/String";
 import {
 	Accordion,
@@ -52,7 +48,9 @@ const TestcaseValidationInstance = ({
 	status,
 	index,
 }: {
-	problem: ProblemModel;
+	problem: {
+		title: string;
+	};
 	value: string;
 	inputValue: string;
 	outputValue: string | null;
@@ -97,7 +95,7 @@ const TestcaseValidationInstance = ({
 			<AccordionContent>
 				<div className="ml-2">
 					<div className="gap-5 px-1">
-						<div className="w-1/2 pr-3">
+						<div className="w-1/2">
 							<div className="flex justify-between">
 								<Label>Input</Label>
 								<DownloadMiniButton
@@ -117,6 +115,7 @@ const TestcaseValidationInstance = ({
 								}
 							/>
 						</div>
+						<div></div>
 					</div>
 					<div className="flex gap-5 mt-3">
 						<div className="w-1/2">
@@ -139,30 +138,32 @@ const TestcaseValidationInstance = ({
 								}
 							/>
 						</div>
-						<div className="w-1/2">
-							<div className="flex justify-between">
-								<Label>Expected Output</Label>
-								<DownloadMiniButton
+						{expectedOutputValue && (
+							<div className="w-1/2">
+								<div className="flex justify-between">
+									<Label>Expected Output</Label>
+									<DownloadMiniButton
+										onClick={() =>
+											downloadTextfile(
+												"expected_output",
+												expectedOutputValue
+											)
+										}
+									/>
+								</div>
+								<RuntimeOutputTextarea
+									className="mt-1 font-mono cursor-pointer"
+									// value={minimizer(outputValue)}
+									value={minimizer(expectedOutputValue)}
+									compareValue={minimizer(outputValue)}
 									onClick={() =>
-										downloadTextfile(
-											"expected_output",
-											expectedOutputValue
+										navigator.clipboard.writeText(
+											expectedOutputValue ?? ""
 										)
 									}
 								/>
 							</div>
-							<RuntimeOutputTextarea
-								className="mt-1 font-mono cursor-pointer"
-								// value={minimizer(outputValue)}
-								value={minimizer(expectedOutputValue)}
-								compareValue={minimizer(outputValue)}
-								onClick={() =>
-									navigator.clipboard.writeText(
-										expectedOutputValue ?? ""
-									)
-								}
-							/>
-						</div>
+						)}
 					</div>
 				</div>
 			</AccordionContent>
@@ -174,7 +175,10 @@ const TestcaseValidationAccordian = ({
 	problem,
 	runtimeResults = [],
 }: {
-	problem: ProblemPopulateTestcases;
+	problem: {
+		title: string;
+		testcases: TestcaseModel[];
+	};
 	runtimeResults?: RuntimeResult[] | TestcaseModel[];
 }) => {
 	return (
@@ -187,7 +191,11 @@ const TestcaseValidationAccordian = ({
 					value={String(index + 1)}
 					inputValue={result.input}
 					outputValue={result.output}
-					expectedOutputValue={problem.testcases[index]?.output}
+					expectedOutputValue={
+						problem.testcases[index]
+							? problem.testcases[index].output
+							: null
+					}
 					status={
 						result.runtime_status ? result.runtime_status : "OK"
 					}
