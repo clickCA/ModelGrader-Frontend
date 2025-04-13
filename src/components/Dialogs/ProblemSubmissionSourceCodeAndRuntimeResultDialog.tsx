@@ -10,11 +10,11 @@ import { Separator } from "../shadcn/Seperator";
 const ProblemSubmissionSourceCodeAndRuntimeResultDialog = ({
 	submission,
 	children,
-  problem
+    problem
 }: {
 	submission: SubmissionPopulateSubmissionTestcaseAndAccountModel;
 	children?: React.ReactNode;
-  problem: ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel
+    problem: ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel
 }) => {
 	const [sourceCode, setSourceCode] = React.useState<string>(
 		submission.submission_code
@@ -44,6 +44,7 @@ const ProblemSubmissionSourceCodeAndRuntimeResultDialog = ({
 					<div className="w-1/2">
 						<ScrollArea className=" h-[60vh] pr-5">
 							<TestcaseValidationAccordian
+                                problem={problem}
 								runtimeResults={submission.runtime_output.map((output,index) => ({
                   ...output,
                   input: problem.testcases[index]?.input

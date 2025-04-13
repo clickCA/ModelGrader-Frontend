@@ -1,6 +1,6 @@
 import { FileDown } from "lucide-react";
 import { RuntimeResult } from "../types/apis/Problem.api";
-import { TestcaseModel } from "../types/models/Problem.model";
+import { ProblemModel, TestcaseModel } from "../types/models/Problem.model";
 import {
 	Accordion,
 	AccordionContent,
@@ -10,6 +10,7 @@ import {
 import { Badge } from "./shadcn/Badge";
 import { Label } from "./shadcn/Label";
 import { Textarea } from "./shadcn/Textarea";
+import { convertToSnakeCase } from "../utilities/String";
 
 const minimizer = (text: string | null): string => {
 	const LIMIT = 250;
@@ -22,36 +23,36 @@ const minimizer = (text: string | null): string => {
 	return text;
 };
 
-const downloadTextfile = (filename: string, text: string | null) => {
-	if (!text) return;
-
-	const element = document.createElement("a");
-	const file = new Blob([text], { type: "text/plain" });
-	element.href = URL.createObjectURL(file);
-	element.download = filename;
-	document.body.appendChild(element); // Required for this to work in FireFox
-	element.click();
-};
-
-const DownloadMiniButton = ({...args}:{
+const DownloadMiniButton = ({
+	...args
+}: {
 	className?: string;
 	onClick?: React.MouseEventHandler<HTMLParagraphElement>;
 }) => {
 	return (
-		<p  className="flex items-center cursor-pointer hover:text-green-500" {...args}><FileDown size={16} className="mr-1" /> Download .txt</p>
-	)
-}
+		<p
+			className="flex items-center cursor-pointer hover:text-green-500"
+			{...args}
+		>
+			<FileDown size={16} className="mr-1" /> Download .txt
+		</p>
+	);
+};
 
 const TestcaseValidationInstance = ({
+	problem,
 	value,
 	inputValue,
 	outputValue,
 	status,
+	index,
 }: {
+	problem: ProblemModel;
 	value: string;
 	inputValue: string;
 	outputValue: string | null;
 	status: string;
+	index: number;
 }) => {
 	// const [inputValue, setInputValue] = useState("1 2 3");
 	// const [outputValue, setOutputValue] = useState("Hello World!");
@@ -59,6 +60,19 @@ const TestcaseValidationInstance = ({
 	// useEffect(() => {
 	// 	console.log(inputValue, outputValue, status);
 	// }, [outputValue]);
+
+	const downloadTextfile = (type: string, text: string | null) => {
+		if (!text) return;
+
+		const element = document.createElement("a");
+		const file = new Blob([text], { type: "text/plain" });
+		element.href = URL.createObjectURL(file);
+		element.download = `${problem.problem_id}_${convertToSnakeCase(
+			problem.title
+		)}_${type}_${index + 1}.txt`;
+		document.body.appendChild(element); // Required for this to work in FireFox
+		element.click();
+	};
 
 	return (
 		<AccordionItem value={value}>
@@ -79,7 +93,11 @@ const TestcaseValidationInstance = ({
 					<div className="w-1/2">
 						<div className="flex justify-between">
 							<Label>Input</Label>
-							<DownloadMiniButton onClick={() => downloadTextfile("input.txt", inputValue)}/>
+							<DownloadMiniButton
+								onClick={() =>
+									downloadTextfile("input", inputValue)
+								}
+							/>
 						</div>
 						<Textarea
 							rows={minimizer(inputValue)?.split("\n").length}
@@ -92,9 +110,13 @@ const TestcaseValidationInstance = ({
 						/>
 					</div>
 					<div className="w-1/2">
-					<div className="flex justify-between">
+						<div className="flex justify-between">
 							<Label>Output</Label>
-							<DownloadMiniButton onClick={() => downloadTextfile("output.txt", outputValue)}/>
+							<DownloadMiniButton
+								onClick={() =>
+									downloadTextfile("output", outputValue)
+								}
+							/>
 						</div>
 						<Textarea
 							rows={minimizer(outputValue)?.split("\n").length}
@@ -105,7 +127,6 @@ const TestcaseValidationInstance = ({
 								navigator.clipboard.writeText(outputValue ?? "")
 							}
 						/>
-						
 					</div>
 					{/* <div className="w-2/12">
 						<Label>Runtime Status</Label>
@@ -126,14 +147,18 @@ const TestcaseValidationInstance = ({
 };
 
 const TestcaseValidationAccordian = ({
+	problem,
 	runtimeResults = [],
 }: {
+	problem: ProblemModel;
 	runtimeResults?: RuntimeResult[] | TestcaseModel[];
 }) => {
 	return (
 		<Accordion type="multiple">
 			{runtimeResults?.map((result, index) => (
 				<TestcaseValidationInstance
+					index={index}
+					problem={problem}
 					key={index}
 					value={String(index + 1)}
 					inputValue={result.input}
