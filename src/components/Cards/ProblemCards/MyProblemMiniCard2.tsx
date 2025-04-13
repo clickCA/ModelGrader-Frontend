@@ -1,8 +1,8 @@
-import { FileSpreadsheet, Pencil, Trash, X } from "lucide-react";
+import { FileSpreadsheet, Pencil, X } from "lucide-react";
 import { useState } from "react";
 import {
-	ProblemModel,
-	ProblemPopulateTestcases,
+    ProblemModel,
+    ProblemPopulateTestcases,
 } from "../../../types/models/Problem.model";
 import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
 import MyProblemContextMenu from "../../ContextMenus/MyProblemContextMenu";
@@ -12,12 +12,14 @@ const MyProblemMiniCard2 = ({
 	problem,
 	disabled = false,
 	disabledHighlight = false,
+	onClick = () => {},
 	onClickPencilIcon,
 	onClickXIcon,
 }: {
 	problem: ProblemPopulateTestcases | ProblemModel;
 	disabled?: boolean;
 	disabledHighlight?: boolean;
+	onClick?: () => void;
 	onClickPencilIcon?: () => void;
 	onClickXIcon?: () => void;
 }) => {
@@ -53,7 +55,7 @@ const MyProblemMiniCard2 = ({
 							`/my/problems/${problem.problem_id}/edit`
 						)
 					}
-					// onClick={() => onClick()}
+					onClick={() => onClick()}
 					onMouseOver={handleMouseOver}
 					onMouseOut={handleMouseOut}
 					className={customCardCSS()}
