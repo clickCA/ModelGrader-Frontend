@@ -127,7 +127,10 @@ const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 		cell: ({ row }) => (
 			<div className="font-medium">
 				<Timer className="inline-block mr-2" size={20} />
-				{row.original.time_limit}
+				<span className="text-neutral-700">
+					{row.original.time_limit.toFixed(3)}{" "}
+					<span className="text-neutral-400">ms</span>
+				</span>
 			</div>
 		),
 	},

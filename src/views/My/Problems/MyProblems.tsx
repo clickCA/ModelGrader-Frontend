@@ -12,6 +12,7 @@ import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { ProblemService } from "../../../services/Problem.service";
 import { Pagination } from "../../../types/Pagination.type";
 import { ProblemPopulateTestcases } from "../../../types/models/Problem.model";
+import { useDebounce } from "use-debounce";
 
 const MyProblems = () => {
 	const accountId = String(localStorage.getItem("account_id"));
@@ -37,18 +38,19 @@ const MyProblems = () => {
 
 	const [tabValue, setTabValue] = useState("personal");
 	const [searchValue, setSearchValue] = useState("");
+    const [debouncedSearchValue] = useDebounce(searchValue, 500);
 
 	useEffect(() => {
 		setFilteredProblems(problems);
 		setFilteredManageableProblems(manageableProblems);
-	}, [searchValue, problems, manageableProblems]);
+	}, [debouncedSearchValue, problems, manageableProblems]);
 
 	useEffect(() => {
 		setLoading(true);
 		ProblemService.getAllAsCreator(accountId, {
 			start: problemPagination.start,
 			end: problemPagination.end,
-			query: searchValue || "",
+			query: debouncedSearchValue || "",
 		}).then((response) => {
 			setProblems(response.data.problems);
 			setManageableProblems(response.data.manageable_problems);
@@ -64,7 +66,7 @@ const MyProblems = () => {
 		accountId,
 		problemPagination.start,
 		problemPagination.end,
-		searchValue,
+		debouncedSearchValue,
 	]);
 
 	const handleNextClick = () => {
