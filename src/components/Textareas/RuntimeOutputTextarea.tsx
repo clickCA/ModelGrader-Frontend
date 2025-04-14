@@ -27,15 +27,16 @@ const RuntimeOutputTextarea = ({
 			}
 
 			if (char === "\n") {
-				return <span className={cn(base, "text-blue-500")}>\n</span>;
+				return (
+					<>
+						<span className={cn(base, "text-blue-500")}>\n</span>
+						<br />
+					</>
+				);
 			} else if (char === "\r") {
 				return <span className={cn(base, "text-red-500")}>\r</span>;
 			} else {
-				return (
-					<span className={base} key={i}>
-						{char}
-					</span>
-				);
+				return <span className={base}>{char}</span>;
 			}
 		});
 	}, [value, compareValue]);
