@@ -94,7 +94,7 @@ const TestcaseValidationInstance = ({
 			</AccordionTrigger>
 			<AccordionContent>
 				<div className="ml-2">
-					<div className="gap-5 px-1">
+					<div className="gap-5 px-1 flex">
 						<div className="w-1/2">
 							<div className="flex justify-between">
 								<Label>Input</Label>
@@ -115,7 +115,7 @@ const TestcaseValidationInstance = ({
 								}
 							/>
 						</div>
-						<div></div>
+						<div className="w-1/2"></div>
 					</div>
 					<div className="flex gap-5 mt-3">
 						<div className="w-1/2">
