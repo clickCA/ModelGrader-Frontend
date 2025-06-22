@@ -49,7 +49,7 @@ const ProblemViewLayout = ({
 	const navigate = useNavigate();
 
 	// const [problem, setProblem] = useState<ProblemPoplulateCreatorModel>();
-	const [selectedLanguage, setSelectedLanguage] = useState("python");
+	const [selectedLanguage, setSelectedLanguage] = useState<string>("python");
 	const [grading, setGrading] = useState<boolean>(false);
 	const [submitCodeValue, setSubmitCodeValue] = useState<string | undefined>(
 		""
@@ -93,11 +93,15 @@ const ProblemViewLayout = ({
 
 	useEffect(() => {
 		if (problem && problem?.allowed_languages.length > 0) {
-			setSelectedLanguage(
-				ProgrammingLanguageOptions.filter((lang) =>
+			const previousSelectedLanguage = localStorage.getItem("previousSelectedLanguage");
+			if (previousSelectedLanguage) {
+				setSelectedLanguage(previousSelectedLanguage);
+			} else {
+				const autoSelectedLanguage = ProgrammingLanguageOptions.filter((lang) =>
 					problem?.allowed_languages.includes(lang.value)
 				)[0].value
-			);
+				setSelectedLanguage(autoSelectedLanguage);
+			}
 		}
 	}, [problem]);
 
@@ -180,7 +184,10 @@ const ProblemViewLayout = ({
 							options={ProgrammingLanguageOptions.filter((lang) =>
 								problem?.allowed_languages.includes(lang.value)
 							)}
-							onSelect={(value) => setSelectedLanguage(value)}
+							onSelect={(value) => {
+								setSelectedLanguage(value);
+								localStorage.setItem("previousSelectedLanguage", value);
+							}}
 							// initialValue={selectedLanguage}
 							value={selectedLanguage}
 							setValue={setSelectedLanguage}
@@ -208,7 +215,7 @@ const ProblemViewLayout = ({
 							onChange={(e) => setSubmitCodeValue(e)}
 							value={submitCodeValue}
 							theme="vs-dark"
-							defaultLanguage="python"
+							// defaultLanguage="python"
 							language={selectedLanguage}
 						/>
 					</MonacoEditorWrapper>
