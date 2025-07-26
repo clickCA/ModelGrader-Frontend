@@ -9,6 +9,7 @@ import {
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
+	SidebarMenuSub,
 	SidebarMenuSubItem,
 } from "../ui/sidebar";
 import {
@@ -31,20 +32,9 @@ const CourseNavSidebar2 = () => {
 				<SidebarMenu>
 					<SidebarMenuItem>
 						<DropdownMenu>
-							<DropdownMenuTrigger asChild>
-								<SidebarMenuButton>
-									Select Workspace
-									<ChevronDown className="ml-auto" />
-								</SidebarMenuButton>
-							</DropdownMenuTrigger>
-							<DropdownMenuContent className="w-[--radix-popper-anchor-width]">
-								<DropdownMenuItem>
-									<span>Acme Inc</span>
-								</DropdownMenuItem>
-								<DropdownMenuItem>
-									<span>Acme Corp.</span>
-								</DropdownMenuItem>
-							</DropdownMenuContent>
+							<SidebarMenuButton>
+								Select Workspace
+							</SidebarMenuButton>
 						</DropdownMenu>
 					</SidebarMenuItem>
 				</SidebarMenu>
@@ -52,21 +42,34 @@ const CourseNavSidebar2 = () => {
 
 			<SidebarContent>
 				<SidebarGroup>
-					<SidebarGroupLabel>Projects</SidebarGroupLabel>
+					<SidebarGroupLabel>Collections</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
 							<Collapsible
 								defaultOpen
 								className="group/collapsible"
 							>
-								<SidebarMenuItem>
+								<SidebarMenuItem key="1">
 									<CollapsibleTrigger asChild>
-										<SidebarMenuButton />
+										<SidebarMenuButton>
+											Button Here
+										</SidebarMenuButton>
 									</CollapsibleTrigger>
 									<CollapsibleContent>
-										<SidebarMenuItem>
-											<SidebarMenuSubItem />
-										</SidebarMenuItem>
+										<SidebarMenuSub>
+											<SidebarMenuSubItem>
+												Hello
+											</SidebarMenuSubItem>
+											<SidebarMenuSubItem>
+												Hello
+											</SidebarMenuSubItem>
+											<SidebarMenuSubItem>
+												Hello
+											</SidebarMenuSubItem>
+											<SidebarMenuSubItem>
+												Hello
+											</SidebarMenuSubItem>
+										</SidebarMenuSub>
 									</CollapsibleContent>
 								</SidebarMenuItem>
 							</Collapsible>
