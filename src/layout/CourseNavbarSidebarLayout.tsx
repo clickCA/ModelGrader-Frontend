@@ -3,6 +3,7 @@ import NavbarMenuLayout from "./NavbarMenuLayout";
 import CourseNavSidebar from "../components/NavigationBar/CourseNavSidebar";
 import { Separator } from "../components/shadcn/Seperator";
 import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContexnt";
+import CourseNavSidebar2 from "../components/NavigationBar/CourseNavSidebar2";
 
 const CourseNavbarSidebarLayout = ({
 	children,
@@ -26,7 +27,7 @@ const CourseNavbarSidebarLayout = ({
 		<NavbarMenuLayout xPad={false} yPad={false}>
 			<div className="flex">
 				<div className={widthAdjuster()[0]}>
-					<CourseNavSidebar />
+					<CourseNavSidebar2 />
 				</div>
 				<div>
 					<Separator orientation="vertical" className="" />
