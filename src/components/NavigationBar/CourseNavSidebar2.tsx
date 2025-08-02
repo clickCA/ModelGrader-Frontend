@@ -1,4 +1,11 @@
-import React from "react";
+import {
+	Collapsible,
+	CollapsibleContent,
+	CollapsibleTrigger,
+} from "@radix-ui/react-collapsible";
+import { FileText, Folder } from "lucide-react";
+import { TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../types/models/Topic.model";
+import { DropdownMenu } from "../ui/dropdown-menu";
 import {
 	Sidebar,
 	SidebarContent,
@@ -10,31 +17,31 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 	SidebarMenuSub,
-	SidebarMenuSubItem,
 } from "../ui/sidebar";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
-import {
-	Collapsible,
-	CollapsibleContent,
-	CollapsibleTrigger,
-} from "@radix-ui/react-collapsible";
 
-const CourseNavSidebar2 = () => {
+const CourseNavSidebar2 = ({
+	course,
+	recentOpenCollection = [],
+	onChange = () => {},
+}: {
+	course: TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel;
+	recentOpenCollection?: string[];
+	onChange?: (id: string, isOpen: boolean) => void;
+}) => {
+
+    const handleOpenChange = (open: boolean, collectionId: string) => {
+        onChange(collectionId,open)
+	};
+
 	return (
 		<Sidebar className="mt-10">
 			<SidebarHeader>
 				<SidebarMenu>
 					<SidebarMenuItem>
 						<DropdownMenu>
-							<SidebarMenuButton>
-								Select Workspace
-							</SidebarMenuButton>
+							<div className="text-base font-bold">
+								{course?.name}
+							</div>
 						</DropdownMenu>
 					</SidebarMenuItem>
 				</SidebarMenu>
@@ -45,34 +52,60 @@ const CourseNavSidebar2 = () => {
 					<SidebarGroupLabel>Collections</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
-							<Collapsible
-								defaultOpen
-								className="group/collapsible"
-							>
-								<SidebarMenuItem key="1">
-									<CollapsibleTrigger asChild>
-										<SidebarMenuButton>
-											Button Here
-										</SidebarMenuButton>
-									</CollapsibleTrigger>
-									<CollapsibleContent>
-										<SidebarMenuSub>
-											<SidebarMenuSubItem>
-												Hello
-											</SidebarMenuSubItem>
-											<SidebarMenuSubItem>
-												Hello
-											</SidebarMenuSubItem>
-											<SidebarMenuSubItem>
-												Hello
-											</SidebarMenuSubItem>
-											<SidebarMenuSubItem>
-												Hello
-											</SidebarMenuSubItem>
-										</SidebarMenuSub>
-									</CollapsibleContent>
-								</SidebarMenuItem>
-							</Collapsible>
+							{course?.collections.map((collection) => (
+								<Collapsible
+                                onOpenChange={(open) => handleOpenChange(open, collection.collection?.collection_id)}
+									defaultOpen={recentOpenCollection.includes(
+										collection.collection?.collection_id
+									)}
+									className="group/collapsible"
+								>
+									<SidebarMenuItem key="1">
+										<CollapsibleTrigger asChild>
+											<SidebarMenuButton className="py-6">
+												<Folder
+													size={16}
+													className="mr-2 text-yellow-400"
+												/>
+												<span className="font-semibold">
+													{
+														collection.collection
+															?.name
+													}
+												</span>
+											</SidebarMenuButton>
+										</CollapsibleTrigger>
+										<CollapsibleContent>
+											<SidebarMenuSub>
+												{collection.collection?.problems.map(
+													(problem) => (
+														<SidebarMenuButton
+															key={
+																problem.problem
+																	?.problem_id
+															}
+														>
+															<div className="flex items-center my-1">
+																<FileText
+																	size={16}
+																	className="mr-2 text-blue-400"
+																/>
+																<span>
+																	{
+																		problem
+																			.problem
+																			?.title
+																	}
+																</span>
+															</div>
+														</SidebarMenuButton>
+													)
+												)}
+											</SidebarMenuSub>
+										</CollapsibleContent>
+									</SidebarMenuItem>
+								</Collapsible>
+							))}
 						</SidebarMenu>
 					</SidebarGroupContent>
 				</SidebarGroup>
