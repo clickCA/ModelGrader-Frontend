@@ -7,7 +7,7 @@ import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import { DataTable } from "./Prototype/DataTable";
 import ProblemSubmissionSourceCodeAndRuntimeResultDialog from "../Dialogs/ProblemSubmissionSourceCodeAndRuntimeResultDialog";
 import TestcasesGradingIndicator from "../TestcasesGradingIndicator";
-import { Button } from "../shadcn/Button";
+import { Button } from "@/components/shadcn/Button";
 import { Link } from "react-router-dom";
 
 const MyProblemSubmissionsTable = ({

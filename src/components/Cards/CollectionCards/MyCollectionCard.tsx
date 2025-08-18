@@ -6,7 +6,7 @@ import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab
 import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import Checkmark from "../../Checkmark";
 import MyCollectionContextMenu from "@/components/ContextMenus/MyCollectionContextMenu";
-import { Card, CardContent } from "../../shadcn/Card";
+import { Card, CardContent } from "@/components/shadcn/Card";
 
 const MyCollectionCard = ({
 	collection

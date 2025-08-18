@@ -1,8 +1,8 @@
 import React from 'react';
 import { CreateGroupRequestForm } from '@/types/forms/CreateGroupRequestForm';
-import { Input } from '../../shadcn/Input';
-import { Label } from '../../shadcn/Label';
-import { Textarea } from '../../shadcn/Textarea';
+import { Input } from '@/components/shadcn/Input';
+import { Label } from '@/components/shadcn/Label';
+import { Textarea } from '@/components/shadcn/Textarea';
 
 const GeneralDetail = ({
 	createRequest,

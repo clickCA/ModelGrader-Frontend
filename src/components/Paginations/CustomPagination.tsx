@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Pagination } from "@/types/Pagination.type";
-import { Button } from "../shadcn/Button";
+import { Button } from "@/components/shadcn/Button";
 
 const CustomPagination = ({
 	pagination,

@@ -7,11 +7,11 @@ import { ValidateProgramResponse } from "@/types/apis/Problem.api";
 import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
 import { testcaseParse } from "@/utilities/TestcaseFormat";
 import TestcaseValidationAccordion from "../../TestcaseValidationAccordion";
-import { Button } from "../../shadcn/Button";
-import { Combobox } from "../../shadcn/Combobox";
-import { Input } from "../../shadcn/Input";
-import { Label } from "../../shadcn/Label";
-import { Separator } from "../../shadcn/Seperator";
+import { Button } from "@/components/shadcn/Button";
+import { Combobox } from "@/components/shadcn/Combobox";
+import { Input } from "@/components/shadcn/Input";
+import { Label } from "@/components/shadcn/Label";
+import { Separator } from "@/components/shadcn/Seperator";
 
 const Scoring = ({
 	createRequest,

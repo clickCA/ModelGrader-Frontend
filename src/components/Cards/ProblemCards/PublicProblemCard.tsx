@@ -5,9 +5,9 @@ import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureMod
 import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
 import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
-import { Button } from "../../shadcn/Button";
-import { Card, CardContent } from "../../shadcn/Card";
-import { Label } from "../../shadcn/Label";
+import { Button } from "@/components/shadcn/Button";
+import { Card, CardContent } from "@/components/shadcn/Card";
+import { Label } from "@/components/shadcn/Label";
 
 const PublicProblemCard = ({
 	problem,

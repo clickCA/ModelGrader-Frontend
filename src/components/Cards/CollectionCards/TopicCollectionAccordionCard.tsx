@@ -8,9 +8,9 @@ import {
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
-} from "../../shadcn/Accordion";
-import { Badge } from "../../shadcn/Badge";
-import { Card } from "../../shadcn/Card";
+} from "@/components/shadcn/Accordion";
+import { Badge } from "@/components/shadcn/Badge";
+import { Card } from "@/components/shadcn/Card";
 
 const isPassed = (collection: CollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel):boolean => {
 	return collection.problems.filter(

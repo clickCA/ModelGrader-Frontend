@@ -4,7 +4,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { CollectionPopulateProblemSecureModel } from "@/types/models/Collection.model";
-import { Card } from "../../shadcn/Card";
+import { Card } from "@/components/shadcn/Card";
 
 
 

@@ -13,8 +13,8 @@ import {
 	ContextMenuItem,
 	ContextMenuSeparator,
 	ContextMenuTrigger,
-} from "../shadcn/ContextMenu";
-import { toast } from "../shadcn/UseToast";
+} from "@/components/shadcn/ContextMenu";
+import { toast } from "@/components/shadcn/UseToast";
 
 const MyCourseContextMenu = ({
 	children,

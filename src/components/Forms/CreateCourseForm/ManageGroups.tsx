@@ -8,8 +8,8 @@ import { CollectionPopulateCollectionProblemPopulateProblemModel } from "@/types
 import { GroupModel } from "@/types/models/Group.model";
 import MyCollectionMiniCard2 from "../../Cards/CollectionCards/MyCollectionMiniCard2";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
-import { Switch } from "../../shadcn/Switch";
-import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
+import { Switch } from "@/components/shadcn/Switch";
+import { Tabs, TabsList, TabsTrigger } from "@/components/shadcn/Tabs";
 import GroupAndPermissionManager, {
 	GroupAndPermissionManagerOnAddGroupsCallback,
 	GroupAndPermissionManagerOnRemoveGroupCallback,

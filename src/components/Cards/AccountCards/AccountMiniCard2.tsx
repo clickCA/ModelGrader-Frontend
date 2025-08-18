@@ -3,7 +3,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { AccountModel, AccountSecureModel } from "@/types/models/Account.model";
-import { Card } from "../../shadcn/Card";
+import { Card } from "@/components/shadcn/Card";
 
 const AccountMiniCard2 = ({
 	// problem,

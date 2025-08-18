@@ -4,13 +4,13 @@ import { Link, useParams } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
 import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
 import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
-import { Badge } from "../../shadcn/Badge";
-import { Button } from "../../shadcn/Button";
+import { Badge } from "@/components/shadcn/Badge";
+import { Button } from "@/components/shadcn/Button";
 import {
 	HoverCard,
 	HoverCardContent,
 	HoverCardTrigger,
-} from "../../shadcn/HoverCard";
+} from "@/components/shadcn/HoverCard";
 import { DataTable } from "../Prototype/DataTable";
 
 const PublicProblemsTable = ({

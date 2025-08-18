@@ -10,10 +10,10 @@ import GroupAndPermissionManager, {
 import CollectionPermissionSwitchGroup from "../PermissionSwitchGroups/CollectionPermissionSwitchGroup";
 import { GroupModel } from "@/types/models/Group.model";
 import { GroupService } from "@/services/Group.service";
-import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/shadcn/Tabs";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
 import MyProblemMiniCard2 from "../../Cards/ProblemCards/MyProblemMiniCard2";
-import { Switch } from "../../shadcn/Switch";
+import { Switch } from "@/components/shadcn/Switch";
 
 const ManageGroups = ({
 	createRequest,

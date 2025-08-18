@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
 import { TestcaseModel } from "@/types/models/Problem.model";
-import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/shadcn/Tabs";
 import FormSaveButton from "../FormSaveButton";
 import GeneralDetail from "./GeneralDetail";
 import ManageGroups from "./ManageGroups";

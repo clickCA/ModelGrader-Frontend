@@ -2,7 +2,7 @@ import { FileSpreadsheet, Folder, LibraryBig, Users } from "lucide-react";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavSidebarContext } from "../../contexts/NavSidebarContext";
-import { Separator } from "../shadcn/Seperator";
+import { Separator } from "@/components/shadcn/Seperator";
 
 const SectionButton = ({
 	selected = false,

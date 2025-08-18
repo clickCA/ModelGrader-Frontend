@@ -20,8 +20,8 @@ import {
 	HoverCard,
 	HoverCardContent,
 	HoverCardTrigger,
-} from "../../shadcn/HoverCard";
-import { Badge } from "../../shadcn/Badge";
+} from "@/components/shadcn/HoverCard";
+import { Badge } from "@/components/shadcn/Badge";
 
 const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	{
