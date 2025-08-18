@@ -3,7 +3,7 @@ import CreateGroupForm, {
 	OnGroupSavedCallback,
 } from "../../../components/Forms/CreateGroupForm";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { GroupService } from "../../../services/Group.service";
+import { GroupService } from "@/services/Group.service";
 import { transformCreateGroupRequestForm2CreateGroupRequest } from "@/types/adapters/CreateGroupRequestForm.adapter";
 import { CreateGroupRequestForm } from "@/types/forms/CreateGroupRequestForm";
 

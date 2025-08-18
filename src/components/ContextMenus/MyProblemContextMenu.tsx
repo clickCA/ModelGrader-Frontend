@@ -1,7 +1,7 @@
 import { CopyPlus, PencilIcon, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProblemService } from "../../services/Problem.service";
+import { ProblemService } from "@/services/Problem.service";
 import { transformCreateProblemRequestForm2CreateProblemRequest } from "@/types/adapters/CreateProblemRequestForm.adapter";
 import {
 	ProblemModel,

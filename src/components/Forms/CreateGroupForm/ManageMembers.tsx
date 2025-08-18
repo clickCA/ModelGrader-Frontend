@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { AccountService } from "../../../services/Account.service";
+import { AccountService } from "@/services/Account.service";
 import { transformAccountModels2AccountHashedTable } from "@/types/adapters/Account.adapter";
 import { CreateGroupRequestForm } from "@/types/forms/CreateGroupRequestForm";
 import {

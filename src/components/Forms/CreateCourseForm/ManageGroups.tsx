@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GroupService } from "../../../services/Group.service";
+import { GroupService } from "@/services/Group.service";
 import {
 	CourseGroupPermissionRequestForm,
 	CreateCourseRequestForm,

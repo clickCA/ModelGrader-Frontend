@@ -8,7 +8,7 @@ import GroupAndPermissionManager, {
 	GroupAndPermissionManagerOnRemoveGroupCallback,
 } from "../GroupAndPermissionManager";
 import { GroupModel } from "@/types/models/Group.model";
-import { GroupService } from "../../../services/Group.service";
+import { GroupService } from "@/services/Group.service";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
 import ProblemPermissionSwitchGroup from "../PermissionSwitchGroups/ProblemPermissionSwitchGroup";
 

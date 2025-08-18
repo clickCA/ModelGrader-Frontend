@@ -1,5 +1,5 @@
 import React from "react";
-import { TopicService } from "../../services/Topic.service";
+import { TopicService } from "@/services/Topic.service";
 import { TopicModel } from "@/types/models/Topic.model";
 import { Button } from "../shadcn/Button";
 import { Dialog, DialogContent } from "../shadcn/Dialog";

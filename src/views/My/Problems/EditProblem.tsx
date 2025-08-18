@@ -5,7 +5,7 @@ import CreateProblemForm, {
 } from "../../../components/Forms/CreateProblemForm";
 import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { ProblemService } from "../../../services/Problem.service";
+import { ProblemService } from "@/services/Problem.service";
 import { transformCreateProblemRequestForm2CreateProblemRequest } from "@/types/adapters/CreateProblemRequestForm.adapter";
 import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "@/types/adapters/Problem.adapter";
 import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";

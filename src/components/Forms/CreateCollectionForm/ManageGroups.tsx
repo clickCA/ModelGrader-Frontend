@@ -9,7 +9,7 @@ import GroupAndPermissionManager, {
 } from "../GroupAndPermissionManager";
 import CollectionPermissionSwitchGroup from "../PermissionSwitchGroups/CollectionPermissionSwitchGroup";
 import { GroupModel } from "@/types/models/Group.model";
-import { GroupService } from "../../../services/Group.service";
+import { GroupService } from "@/services/Group.service";
 import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
 import MyProblemMiniCard2 from "../../Cards/ProblemCards/MyProblemMiniCard2";

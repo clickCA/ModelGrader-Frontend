@@ -1,8 +1,8 @@
 import { CopyPlus, PencilIcon, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CollectionService } from "../../services/Collection.service";
-import { ProblemService } from "../../services/Problem.service";
+import { CollectionService } from "@/services/Collection.service";
+import { ProblemService } from "@/services/Problem.service";
 import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "@/types/adapters/Collection.adapter";
 import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "@/types/adapters/CreateCollectionRequestForm.adapter";
 import { CollectionModel } from "@/types/models/Collection.model";
@@ -33,7 +33,7 @@ const MyCollectionContextMenu = ({
 			accountId
 		);
 
-		let createRequest =
+		const createRequest =
 			transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest(
 				response.data
 			);
@@ -60,7 +60,7 @@ const MyCollectionContextMenu = ({
 				);
 			})
 			.then((response) => {
-				let promise = [];
+				const promise = [];
 				for (const problem of problemGroupPermissions) {
 					promise.push(
 						ProblemService.updateGroupPermissions(

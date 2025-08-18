@@ -8,7 +8,7 @@ import { Input } from "../../../components/shadcn/Input";
 import { Tabs, TabsList, TabsTrigger } from "../../../components/shadcn/Tabs";
 import { NavSidebarContext } from "../../../contexts/NavSidebarContext";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { TopicService } from "../../../services/Topic.service";
+import { TopicService } from "@/services/Topic.service";
 import { TopicPopulateTopicCollectionPopulateCollectionModel } from "@/types/models/Topic.model";
 import MyCoursesTable from "../../../components/Tables/MyCoursesTable";
 

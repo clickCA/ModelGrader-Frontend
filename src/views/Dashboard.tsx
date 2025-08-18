@@ -9,8 +9,8 @@ import {
 	CarouselPrevious,
 } from "../components/shadcn/Carousel";
 import NavbarMenuLayout from "../layout/NavbarMenuLayout";
-import { SubmissionService } from "../services/Submission.service";
-import { TopicService } from "../services/Topic.service";
+import { SubmissionService } from "@/services/Submission.service";
+import { TopicService } from "@/services/Topic.service";
 import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "@/types/models/Submission.model";
 import { TopicModel } from "@/types/models/Topic.model";
 

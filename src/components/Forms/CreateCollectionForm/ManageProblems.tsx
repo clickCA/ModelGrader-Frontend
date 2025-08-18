@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { ProblemService } from "../../../services/Problem.service";
+import { ProblemService } from "@/services/Problem.service";
 import { transformProblemModel2ProblemHashedTable } from "@/types/adapters/Problem.adapter";
 import {
 	CreateCollectionRequestForm,

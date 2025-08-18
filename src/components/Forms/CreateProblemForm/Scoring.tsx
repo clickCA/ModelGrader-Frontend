@@ -2,7 +2,7 @@ import { Editor as MonacoEditor } from "@monaco-editor/react";
 import { Loader2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
-import { ProblemService } from "../../../services/Problem.service";
+import { ProblemService } from "@/services/Problem.service";
 import { ValidateProgramResponse } from "@/types/apis/Problem.api";
 import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
 import { testcaseParse } from "@/utilities/TestcaseFormat";

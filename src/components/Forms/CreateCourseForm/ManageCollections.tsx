@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { CollectionService } from "../../../services/Collection.service";
+import { CollectionService } from "@/services/Collection.service";
 import { transformCollectionPopulateProblemSecureModel2CollectionHashedTable } from "@/types/adapters/Collection.adapter";
 import {
 	CollectionItemInterface,

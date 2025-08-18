@@ -5,8 +5,8 @@ import CreateCollectionForm, {
 } from "../../../components/Forms/CreateCollectionForm";
 import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { CollectionService } from "../../../services/Collection.service";
-import { ProblemService } from "../../../services/Problem.service";
+import { CollectionService } from "@/services/Collection.service";
+import { ProblemService } from "@/services/Problem.service";
 import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "@/types/adapters/CreateCollectionRequestForm.adapter";
 import { CreateCollectionRequestForm } from "@/types/forms/CreateCollectionRequestForm";
 

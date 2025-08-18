@@ -4,8 +4,8 @@ import ProblemViewLayout, {
 	OnSubmitProblemViewLayoutCallback,
 } from "../components/ProblemViewLayout";
 import CourseNavbarSidebarLayout from "../layout/CourseNavbarSidebarLayout";
-import { ProblemService } from "../services/Problem.service";
-import { SubmissionService } from "../services/Submission.service";
+import { ProblemService } from "@/services/Problem.service";
+import { SubmissionService } from "@/services/Submission.service";
 import { ProblemPopulateCreatorSecureModel } from "@/types/models/Problem.model";
 import { GetSubmissionByAccountProblemResponse } from "@/types/models/Submission.model";
 
