@@ -1,4 +1,4 @@
-import { handleDeprecatedDescription } from "../../utilities/HandleDeprecatedDescription";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
 import { CreateCourseRequestForm } from "../forms/CreateCourseRequestForm";
 import { TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupAndTopicGroupPermissionPopulateGroupModel } from "../models/Topic.model";
 

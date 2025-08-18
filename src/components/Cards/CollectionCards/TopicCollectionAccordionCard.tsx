@@ -1,6 +1,6 @@
 import { Check, FileCheck, Folder } from "lucide-react";
 import { CollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Collection.model";
-import { handleDeprecatedDescription } from "../../../utilities/HandleDeprecatedDescription";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
 import ReadOnlyPlate from "../../ReadOnlyPlate";
 import PublicProblemsTable from "../../Tables/ProblemTables/PublicProblemsTable";
 import {

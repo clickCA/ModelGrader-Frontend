@@ -3,7 +3,7 @@ import { Check, LibraryBig, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../constants/ProgrammingLanguage";
 import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "@/types/models/Submission.model";
-import { readableDateFormat } from "../../utilities/ReadableDateFormat";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import TestcasesGradingIndicator from "../TestcasesGradingIndicator";
 import { DataTable } from "./Prototype/DataTable";
 

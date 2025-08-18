@@ -11,7 +11,7 @@ import {
 	AccordionTrigger,
 } from "./shadcn/Accordion";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./shadcn/Tooltip";
-import { onMiddleClickOpenInNewTab } from "../utilities/OnMiddleClickOpenInNewTab";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
 
 const NavbarCollectionProblemCard = ({
 	problem

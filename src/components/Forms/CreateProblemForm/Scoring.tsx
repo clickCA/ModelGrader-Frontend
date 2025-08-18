@@ -5,7 +5,7 @@ import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLangua
 import { ProblemService } from "../../../services/Problem.service";
 import { ValidateProgramResponse } from "@/types/apis/Problem.api";
 import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
-import { testcaseParse } from "../../../utilities/TestcaseFormat";
+import { testcaseParse } from "@/utilities/TestcaseFormat";
 import TestcaseValidationAccordion from "../../TestcaseValidationAccordion";
 import { Button } from "../../shadcn/Button";
 import { Combobox } from "../../shadcn/Combobox";

@@ -6,8 +6,8 @@ import {
 	CollectionPopulateCollectionProblemPopulateProblemModel,
 	CollectionPopulateProblemSecureModel
 } from "@/types/models/Collection.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
-import MyCollectionContextMenu from "../../ContextMenus/MyCollectionContextMenu";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
+import MyCollectionContextMenu from "@/components/ContextMenus/MyCollectionContextMenu";
 import { Card } from "../../shadcn/Card";
 
 

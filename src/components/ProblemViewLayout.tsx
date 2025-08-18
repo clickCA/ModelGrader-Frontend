@@ -12,8 +12,8 @@ import {
   GetSubmissionByAccountProblemResponse,
   SubmissionPopulateSubmissionTestcasesSecureModel,
 } from "@/types/models/Submission.model";
-import { handleDeprecatedDescription } from "../utilities/HandleDeprecatedDescription";
-import { readableDateFormat } from "../utilities/ReadableDateFormat";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import PreviousSubmissionsCombobox from "./PreviousSubmissionsCombobox";
 import ReadOnlyPlate from "./ReadOnlyPlate";
 import TestcasesGradingIndicator from "./TestcasesGradingIndicator";

@@ -4,7 +4,7 @@ import {
     ProblemModel,
     ProblemPopulateTestcases,
 } from "@/types/models/Problem.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
 import MyProblemContextMenu from "../../ContextMenus/MyProblemContextMenu";
 import { Card } from "../../shadcn/Card";
 

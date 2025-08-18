@@ -7,8 +7,8 @@ import {
 	ProblemPopulateTestcases,
 	TestcaseModel
 } from "@/types/models/Problem.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
-import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import Checkmark from "../../Checkmark";
 import MyProblemContextMenu from "../../ContextMenus/MyProblemContextMenu";
 import { Card, CardContent } from "../../shadcn/Card";

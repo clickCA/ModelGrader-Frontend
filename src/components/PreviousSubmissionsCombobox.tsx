@@ -10,7 +10,7 @@ import {
   SubmissionPopulateSubmissionTestcasesSecureModel,
   SubmissionTestcaseSecureModel,
 } from "@/types/models/Submission.model";
-import { readableDateFormat } from "../utilities/ReadableDateFormat";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import { Button } from "./shadcn/Button";
 import {
   Command,

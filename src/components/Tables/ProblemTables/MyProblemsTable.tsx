@@ -11,8 +11,8 @@ import {
 import { Link } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
 import { ProblemPopulateTestcases } from "@/types/models/Problem.model";
-import { checkRuntimeStatus } from "../../../utilities/CheckRuntimeStatus";
-import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
+import { checkRuntimeStatus } from "@/utilities/CheckRuntimeStatus";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import MyProblemDropdown from "../../Dropdowns/MyProblemDropdown";
 import { DataTable } from "../Prototype/DataTable";
 import DataTableSortableLayout from "../Prototype/DataTableSortableLayout";

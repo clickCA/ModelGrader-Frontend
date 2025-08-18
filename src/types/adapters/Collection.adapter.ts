@@ -1,4 +1,4 @@
-import { handleDeprecatedDescription } from "../../utilities/HandleDeprecatedDescription";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
 import { CreateCollectionRequestForm } from "../forms/CreateCollectionRequestForm";
 import { CollectionHashedTable, CollectionPopulateCollectionProblemPopulateProblemModel, CollectionPopulateCollectionProblemsPopulateProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupAndCollectionGroupPermissionsPopulateGroupModel } from "../models/Collection.model";
 
