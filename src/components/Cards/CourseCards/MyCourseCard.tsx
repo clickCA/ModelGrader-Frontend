@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { TopicPopulateTopicCollectionPopulateCollectionModel } from "@/types/models/Topic.model";
 import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
 import { readableDateFormat } from "@/utilities/ReadableDateFormat";
-import MyCourseContextMenu from "../../ContextMenus/MyCourseContextMenu";
+import MyCourseContextMenu from "@/components/ContextMenus/MyCourseContextMenu";
 import { Card, CardContent } from "../../shadcn/Card";
 
 const MyCourseCard = ({

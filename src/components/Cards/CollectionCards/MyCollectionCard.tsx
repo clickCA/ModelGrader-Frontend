@@ -5,7 +5,7 @@ import { CollectionPopulateCollectionProblemPopulateProblemModel } from "@/types
 import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
 import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import Checkmark from "../../Checkmark";
-import MyCollectionContextMenu from "../../ContextMenus/MyCollectionContextMenu";
+import MyCollectionContextMenu from "@/components/ContextMenus/MyCollectionContextMenu";
 import { Card, CardContent } from "../../shadcn/Card";
 
 const MyCollectionCard = ({
