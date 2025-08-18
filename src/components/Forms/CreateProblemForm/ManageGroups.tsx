@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import {
 	CreateProblemRequestForm,
 	ProblemGroupPermissionRequestForm,
-} from "../../../types/forms/CreateProblemRequestForm";
+} from "@/types/forms/CreateProblemRequestForm";
 import GroupAndPermissionManager, {
 	GroupAndPermissionManagerOnAddGroupsCallback,
 	GroupAndPermissionManagerOnRemoveGroupCallback,
 } from "../GroupAndPermissionManager";
-import { GroupModel } from "../../../types/models/Group.model";
+import { GroupModel } from "@/types/models/Group.model";
 import { GroupService } from "../../../services/Group.service";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
 import ProblemPermissionSwitchGroup from "../PermissionSwitchGroups/ProblemPermissionSwitchGroup";

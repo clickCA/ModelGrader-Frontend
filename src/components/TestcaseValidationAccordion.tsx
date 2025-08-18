@@ -1,6 +1,6 @@
 import { FileDown } from "lucide-react";
-import { RuntimeResult } from "../types/apis/Problem.api";
-import { TestcaseModel } from "../types/models/Problem.model";
+import { RuntimeResult } from "@/types/apis/Problem.api";
+import { TestcaseModel } from "@/types/models/Problem.model";
 import { convertToSnakeCase } from "../utilities/String";
 import {
 	Accordion,

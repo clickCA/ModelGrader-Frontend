@@ -1,4 +1,4 @@
-import { SubmissionTestcaseSecureModel } from "../types/models/Submission.model";
+import { SubmissionTestcaseSecureModel } from "@/types/models/Submission.model";
 import {
 	HoverCard,
 	HoverCardContent,

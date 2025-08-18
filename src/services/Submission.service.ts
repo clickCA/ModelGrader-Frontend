@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/BackendBaseURL";
-import { GetAllSubmissionsResponse, GetSubmissionsByCretorProblemResponse, SubmissionServiceAPI } from "../types/apis/Submission.api";
-import { GetSubmissionByAccountProblemResponse, SubmissionPopulateSubmissionTestcasesSecureModel } from "../types/models/Submission.model";
+import { GetAllSubmissionsResponse, GetSubmissionsByCretorProblemResponse, SubmissionServiceAPI } from "@/types/apis/Submission.api";
+import { GetSubmissionByAccountProblemResponse, SubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Submission.model";
 
 
 

@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import CreateGroupForm, { OnGroupSavedCallback } from "../../../components/Forms/CreateGroupForm";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { GroupService } from "../../../services/Group.service";
-import { transformCreateGroupRequestForm2CreateGroupRequest } from "../../../types/adapters/CreateGroupRequestForm.adapter";
-import { transformGroupPopulateGroupMemberPopulateAccountSecureModel2CreateGroupRequestForm } from "../../../types/adapters/Group.adapter";
-import { CreateGroupRequestForm } from "../../../types/forms/CreateGroupRequestForm";
-import { GroupPopulateGroupMemberPopulateAccountSecureModel } from "../../../types/models/Group.model";
+import { transformCreateGroupRequestForm2CreateGroupRequest } from "@/types/adapters/CreateGroupRequestForm.adapter";
+import { transformGroupPopulateGroupMemberPopulateAccountSecureModel2CreateGroupRequestForm } from "@/types/adapters/Group.adapter";
+import { CreateGroupRequestForm } from "@/types/forms/CreateGroupRequestForm";
+import { GroupPopulateGroupMemberPopulateAccountSecureModel } from "@/types/models/Group.model";
 
 const EditGroup = () => {
 	const { groupId } = useParams();

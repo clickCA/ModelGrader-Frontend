@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { CreateGroupRequestForm } from "../../../types/forms/CreateGroupRequestForm";
+import { CreateGroupRequestForm } from "@/types/forms/CreateGroupRequestForm";
 import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
 // import GeneralDetail from "./GeneralDetail";
 // import ManageCollections from "./ManageCollections";

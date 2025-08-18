@@ -4,7 +4,7 @@ import PublicProblemsTable from "../components/Tables/ProblemTables/PublicProble
 import { Separator } from "../components/shadcn/Seperator";
 import NavbarMenuLayout from "../layout/NavbarMenuLayout";
 import { ProblemService } from "../services/Problem.service";
-import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../types/models/Problem.model";
+import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
 
 const ExploreProblems = () => {
 	const [problems, setProblems] = useState<

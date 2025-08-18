@@ -1,12 +1,12 @@
 import { Eye, PlusCircle, Users, X } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CreateCollectionRequestForm } from "../../types/forms/CreateCollectionRequestForm";
+import { CreateCollectionRequestForm } from "@/types/forms/CreateCollectionRequestForm";
 import {
 	CreateCourseRequestForm
-} from "../../types/forms/CreateCourseRequestForm";
-import { CreateProblemRequestForm } from "../../types/forms/CreateProblemRequestForm";
-import { GroupModel } from "../../types/models/Group.model";
+} from "@/types/forms/CreateCourseRequestForm";
+import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
+import { GroupModel } from "@/types/models/Group.model";
 import GroupCheckbox from "../GroupCheckbox";
 import { Button } from "../shadcn/Button";
 import {

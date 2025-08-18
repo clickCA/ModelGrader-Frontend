@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { CreateCourseRequestForm } from "../../../types/forms/CreateCourseRequestForm";
+import { CreateCourseRequestForm } from "@/types/forms/CreateCourseRequestForm";
 import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
 import FormSaveButton from "../FormSaveButton";
 import GeneralDetail from "./GeneralDetail";

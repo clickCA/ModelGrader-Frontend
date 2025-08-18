@@ -10,8 +10,8 @@ import { Tabs, TabsList, TabsTrigger } from "../../../components/shadcn/Tabs";
 import { NavSidebarContext } from "../../../contexts/NavSidebarContext";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { ProblemService } from "../../../services/Problem.service";
-import { Pagination } from "../../../types/Pagination.type";
-import { ProblemPopulateTestcases } from "../../../types/models/Problem.model";
+import { Pagination } from "@/types/Pagination.type";
+import { ProblemPopulateTestcases } from "@/types/models/Problem.model";
 import { useDebounce } from "use-debounce";
 
 const MyProblems = () => {

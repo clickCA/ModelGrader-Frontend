@@ -8,7 +8,7 @@ import {
 	ProblemModel,
 	ProblemPopulateTestcases,
 	ProblemSecureModel
-} from "../../../types/models/Problem.model";
+} from "@/types/models/Problem.model";
 import Checkmark from "../../Checkmark";
 import DeleteProblemConfirmationDialog from "../../Dialogs/DeleteProblemConfirmationDialog";
 import { Card } from "../../shadcn/Card";

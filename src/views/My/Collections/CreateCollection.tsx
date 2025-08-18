@@ -7,8 +7,8 @@ import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { CollectionService } from "../../../services/Collection.service";
 import { ProblemService } from "../../../services/Problem.service";
-import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "../../../types/adapters/CreateCollectionRequestForm.adapter";
-import { CreateCollectionRequestForm } from "../../../types/forms/CreateCollectionRequestForm";
+import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "@/types/adapters/CreateCollectionRequestForm.adapter";
+import { CreateCollectionRequestForm } from "@/types/forms/CreateCollectionRequestForm";
 
 const formInitialValue: CreateCollectionRequestForm = {
 	title: "",

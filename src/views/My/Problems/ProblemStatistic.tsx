@@ -5,10 +5,10 @@ import MyProblemSubmissionsTable from "../../../components/Tables/MyProblemSubmi
 import { Button } from "../../../components/shadcn/Button";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { SubmissionService } from "../../../services/Submission.service";
-import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "../../../types/models/Problem.model";
-import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "../../../types/models/Submission.model";
+import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "@/types/models/Problem.model";
+import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "@/types/models/Submission.model";
 import { ProblemService } from "./../../../services/Problem.service";
-import { Pagination } from "../../../types/Pagination.type";
+import { Pagination } from "@/types/Pagination.type";
 import { PaginationInitalValue } from "../../../constants/Pagination";
 import CustomPagination from "../../../components/Paginations/CustomPagination";
 

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import {
 	ProblemPopulateTestcases,
 	TestcaseModel
-} from "../../../types/models/Problem.model";
+} from "@/types/models/Problem.model";
 import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
 import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
 import Checkmark from "../../Checkmark";

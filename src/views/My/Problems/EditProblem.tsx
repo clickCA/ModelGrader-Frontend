@@ -6,10 +6,10 @@ import CreateProblemForm, {
 import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { ProblemService } from "../../../services/Problem.service";
-import { transformCreateProblemRequestForm2CreateProblemRequest } from "../../../types/adapters/CreateProblemRequestForm.adapter";
-import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "../../../types/adapters/Problem.adapter";
-import { CreateProblemRequestForm } from "../../../types/forms/CreateProblemRequestForm";
-import { ProblemPoplulateCreatorModel } from "../../../types/models/Problem.model";
+import { transformCreateProblemRequestForm2CreateProblemRequest } from "@/types/adapters/CreateProblemRequestForm.adapter";
+import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "@/types/adapters/Problem.adapter";
+import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
+import { ProblemPoplulateCreatorModel } from "@/types/models/Problem.model";
 
 const EditProblem = () => {
 	const accountId = String(localStorage.getItem("account_id"));

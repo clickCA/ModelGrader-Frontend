@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import {
 	CollectionGroupPermissionRequestForm,
 	CreateCollectionRequestForm,
-} from "../../../types/forms/CreateCollectionRequestForm";
+} from "@/types/forms/CreateCollectionRequestForm";
 import GroupAndPermissionManager, {
 	GroupAndPermissionManagerOnAddGroupsCallback,
 	GroupAndPermissionManagerOnRemoveGroupCallback,
 } from "../GroupAndPermissionManager";
 import CollectionPermissionSwitchGroup from "../PermissionSwitchGroups/CollectionPermissionSwitchGroup";
-import { GroupModel } from "../../../types/models/Group.model";
+import { GroupModel } from "@/types/models/Group.model";
 import { GroupService } from "../../../services/Group.service";
 import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";

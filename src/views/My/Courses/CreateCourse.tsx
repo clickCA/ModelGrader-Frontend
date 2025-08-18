@@ -7,8 +7,8 @@ import { EmptyEditorValue } from "../../../constants/DummyEditorValue";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { CollectionService } from "../../../services/Collection.service";
 import { TopicService } from "../../../services/Topic.service";
-import { transformCreateCourseRequestForm2CreateTopicRequest } from "../../../types/adapters/CreateCourseRequestForm.adapter";
-import { CreateCourseRequestForm } from "../../../types/forms/CreateCourseRequestForm";
+import { transformCreateCourseRequestForm2CreateTopicRequest } from "@/types/adapters/CreateCourseRequestForm.adapter";
+import { CreateCourseRequestForm } from "@/types/forms/CreateCourseRequestForm";
 
 const formInitialValue: CreateCourseRequestForm = {
 	title: "",

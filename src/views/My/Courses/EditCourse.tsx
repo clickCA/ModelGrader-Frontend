@@ -6,9 +6,9 @@ import CreateCourseForm, {
 import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { TopicService } from "../../../services/Topic.service";
-import { transformCreateCourseRequestForm2CreateTopicRequest } from "../../../types/adapters/CreateCourseRequestForm.adapter";
-import { transformTopicPopulateTopicCollectionPopulateCollectionAndTopicGroupPermissionPopulateGroupModel2CreateCourseRequest } from "../../../types/adapters/Topic.adapter";
-import { CreateCourseRequestForm } from "../../../types/forms/CreateCourseRequestForm";
+import { transformCreateCourseRequestForm2CreateTopicRequest } from "@/types/adapters/CreateCourseRequestForm.adapter";
+import { transformTopicPopulateTopicCollectionPopulateCollectionAndTopicGroupPermissionPopulateGroupModel2CreateCourseRequest } from "@/types/adapters/Topic.adapter";
+import { CreateCourseRequestForm } from "@/types/forms/CreateCourseRequestForm";
 import { CollectionService } from "../../../services/Collection.service";
 
 const EditCourse = () => {

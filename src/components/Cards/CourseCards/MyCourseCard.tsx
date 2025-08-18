@@ -1,7 +1,7 @@
 import { Folder, LibraryBig } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { TopicPopulateTopicCollectionPopulateCollectionModel } from "../../../types/models/Topic.model";
+import { TopicPopulateTopicCollectionPopulateCollectionModel } from "@/types/models/Topic.model";
 import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
 import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
 import MyCourseContextMenu from "../../ContextMenus/MyCourseContextMenu";

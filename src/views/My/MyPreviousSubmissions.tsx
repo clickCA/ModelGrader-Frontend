@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import MyPreviousSubmissionsTable from "../../components/Tables/MyPreviousSubmissionsTable";
 import NavbarSidebarLayout from "../../layout/NavbarSidebarLayout";
 import { SubmissionService } from "../../services/Submission.service";
-import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "../../types/models/Submission.model";
+import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "@/types/models/Submission.model";
 
 const MyPreviousSubmissions = () => {
 

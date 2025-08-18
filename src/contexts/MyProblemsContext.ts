@@ -1,5 +1,5 @@
 // import { createContext, useState } from "react"
-// import { ProblemPopulateTestcases } from "../types/models/Problem.model"
+// import { ProblemPopulateTestcases } from "@/types/models/Problem.model"
 
 // export type MyProblemsContextStateType = {
 //     problems: ProblemPopulateTestcases[]

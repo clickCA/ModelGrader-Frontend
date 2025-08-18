@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Folder, LibraryBig, MoreHorizontal } from "lucide-react";
 import { Link } from "react-router-dom";
-import { TopicPopulateTopicCollectionPopulateCollectionModel } from "../../types/models/Topic.model";
+import { TopicPopulateTopicCollectionPopulateCollectionModel } from "@/types/models/Topic.model";
 import { readableDateFormat } from "../../utilities/ReadableDateFormat";
 import MyCourseDropdown from "../Dropdowns/MyCourseDropdown";
 import { DataTable } from "./Prototype/DataTable";

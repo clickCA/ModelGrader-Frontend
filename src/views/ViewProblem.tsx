@@ -6,10 +6,10 @@ import ProblemViewLayout, {
 import NavbarMenuLayout from "../layout/NavbarMenuLayout";
 import { ProblemService } from "../services/Problem.service";
 import { SubmissionService } from "../services/Submission.service";
-import { ProblemPopulateCreatorSecureModel } from "../types/models/Problem.model";
+import { ProblemPopulateCreatorSecureModel } from "@/types/models/Problem.model";
 import {
 	GetSubmissionByAccountProblemResponse
-} from "../types/models/Submission.model";
+} from "@/types/models/Submission.model";
 
 const ViewProblem = () => {
 	const { problemId } = useParams();

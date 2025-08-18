@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CourseNavSidebarContext } from "../../contexts/CourseNavSidebarContexnt";
 import { TopicService } from "../../services/Topic.service";
-import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../types/models/Topic.model";
+import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Topic.model";
 import NavbarCollectionsProblemsAccordion from "../NavbarCollectionsProblemsAccordion";
 import { ScrollArea } from "../shadcn/ScrollArea";
 import { Separator } from "../shadcn/Seperator";

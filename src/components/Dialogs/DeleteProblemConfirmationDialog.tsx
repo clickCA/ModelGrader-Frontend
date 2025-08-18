@@ -1,6 +1,6 @@
 import React from "react";
 import { ProblemService } from "../../services/Problem.service";
-import { ProblemModel, ProblemPopulateTestcases, ProblemSecureModel } from "../../types/models/Problem.model";
+import { ProblemModel, ProblemPopulateTestcases, ProblemSecureModel } from "@/types/models/Problem.model";
 import { Button } from "../shadcn/Button";
 import { Dialog, DialogContent } from "../shadcn/Dialog";
 

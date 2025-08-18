@@ -6,9 +6,9 @@ import CreateCollectionForm, {
 import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
 import { CollectionService } from "../../../services/Collection.service";
-import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "../../../types/adapters/Collection.adapter";
-import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "../../../types/adapters/CreateCollectionRequestForm.adapter";
-import { CreateCollectionRequestForm } from "../../../types/forms/CreateCollectionRequestForm";
+import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "@/types/adapters/Collection.adapter";
+import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "@/types/adapters/CreateCollectionRequestForm.adapter";
+import { CreateCollectionRequestForm } from "@/types/forms/CreateCollectionRequestForm";
 import { ProblemService } from "../../../services/Problem.service";
 
 const EditCollection = () => {

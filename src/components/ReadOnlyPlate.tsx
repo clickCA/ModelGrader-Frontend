@@ -11,7 +11,7 @@ import { commentsUsers, myUserId } from "../lib/plate/comments";
 import { MENTIONABLES } from "../lib/plate/mentionables";
 import { plugins } from "../lib/plate/plate-plugins";
 import { cn } from "../lib/utils";
-import { PlateEditorValueType } from "../types/PlateEditorValueType";
+import { PlateEditorValueType } from "@/types/PlateEditorValueType";
 import { CommentsPopover } from "./plate-ui/comments-popover";
 import { CursorOverlay } from "./plate-ui/cursor-overlay";
 import { Editor } from "./plate-ui/editor";

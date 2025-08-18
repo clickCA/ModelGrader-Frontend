@@ -9,7 +9,7 @@ import { cn } from "../lib/utils";
 import {
   SubmissionPopulateSubmissionTestcasesSecureModel,
   SubmissionTestcaseSecureModel,
-} from "../types/models/Submission.model";
+} from "@/types/models/Submission.model";
 import { readableDateFormat } from "../utilities/ReadableDateFormat";
 import { Button } from "./shadcn/Button";
 import {

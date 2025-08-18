@@ -2,7 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { FileSpreadsheet, Puzzle } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
-import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../../types/models/Problem.model";
+import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
 import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
 import { Badge } from "../../shadcn/Badge";
 import { Button } from "../../shadcn/Button";

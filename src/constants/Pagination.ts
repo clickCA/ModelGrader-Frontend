@@ -1,4 +1,4 @@
-import { Pagination } from "../types/Pagination.type";
+import { Pagination } from "@/types/Pagination.type";
 
 export const PaginationInitalValue: Pagination = {
 	start: 0,

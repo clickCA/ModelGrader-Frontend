@@ -1,8 +1,8 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Check, LibraryBig, Maximize2, X } from "lucide-react";
 import { ProgrammingLanguageOptions } from "../../constants/ProgrammingLanguage";
-import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "../../types/models/Problem.model";
-import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "../../types/models/Submission.model";
+import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "@/types/models/Problem.model";
+import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "@/types/models/Submission.model";
 import { readableDateFormat } from "../../utilities/ReadableDateFormat";
 import { DataTable } from "./Prototype/DataTable";
 import ProblemSubmissionSourceCodeAndRuntimeResultDialog from "../Dialogs/ProblemSubmissionSourceCodeAndRuntimeResultDialog";

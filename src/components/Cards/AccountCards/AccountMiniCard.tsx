@@ -2,7 +2,7 @@ import {
 	User
 } from "lucide-react";
 import { useState } from "react";
-import { AccountModel, AccountSecureModel } from "../../../types/models/Account.model";
+import { AccountModel, AccountSecureModel } from "@/types/models/Account.model";
 import { Card } from "../../shadcn/Card";
 
 const AccountMiniCard = ({

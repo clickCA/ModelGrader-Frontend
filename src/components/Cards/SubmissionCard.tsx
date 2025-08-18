@@ -1,6 +1,6 @@
 import { FileSpreadsheet, LibraryBig, StepForward } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "../../types/models/Submission.model";
+import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "@/types/models/Submission.model";
 import { readableDateFormat } from "../../utilities/ReadableDateFormat";
 import TestcasesGradingIndicator from "../TestcasesGradingIndicator";
 import { Button } from "../shadcn/Button";

@@ -1,5 +1,5 @@
 import { FileSpreadsheet, Folder } from "lucide-react";
-import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../types/models/Topic.model";
+import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Topic.model";
 import PublicProblemMiniCard from "./Cards/ProblemCards/PublicProblemMiniCard";
 import {
 	Accordion,

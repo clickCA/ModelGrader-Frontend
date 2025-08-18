@@ -1,6 +1,6 @@
 import React from "react";
 import { CollectionService } from "../../services/Collection.service";
-import { CollectionModel } from "../../types/models/Collection.model";
+import { CollectionModel } from "@/types/models/Collection.model";
 import { Button } from "../shadcn/Button";
 import { Dialog, DialogContent } from "../shadcn/Dialog";
 

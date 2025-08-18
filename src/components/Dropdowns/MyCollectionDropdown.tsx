@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CollectionService } from "../../services/Collection.service";
 import { ProblemService } from "../../services/Problem.service";
-import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "../../types/adapters/Collection.adapter";
-import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "../../types/adapters/CreateCollectionRequestForm.adapter";
-import { CollectionModel } from "../../types/models/Collection.model";
+import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "@/types/adapters/Collection.adapter";
+import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "@/types/adapters/CreateCollectionRequestForm.adapter";
+import { CollectionModel } from "@/types/models/Collection.model";
 import DeleteCollectionConfirmationDialog from "../Dialogs/DeleteCollectionConfirmationDialog";
 import {
 	DropdownMenu,
