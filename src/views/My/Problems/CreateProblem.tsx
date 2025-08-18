@@ -5,9 +5,9 @@ import CreateProblemForm, {
 } from "../../../components/Forms/CreateProblemForm";
 import { toast } from "../../../components/shadcn/UseToast";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { ProblemService } from "../../../services/Problem.service";
-import { transformCreateProblemRequestForm2CreateProblemRequest } from "../../../types/adapters/CreateProblemRequestForm.adapter";
-import { CreateProblemRequestForm } from "../../../types/forms/CreateProblemRequestForm";
+import { ProblemService } from "@/services/Problem.service";
+import { transformCreateProblemRequestForm2CreateProblemRequest } from "@/types/adapters/CreateProblemRequestForm.adapter";
+import { CreateProblemRequestForm } from "@/types/forms/CreateProblemRequestForm";
 
 const formInitialValue: CreateProblemRequestForm = {
 	title: "",

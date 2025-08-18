@@ -1,4 +1,4 @@
-import { testcaseParse } from "../../utilities/TestcaseFormat";
+import { testcaseParse } from "@/utilities/TestcaseFormat";
 import { CreateProblemRequest, ProblemGroupPermissionCreateRequest } from "../apis/Problem.api";
 import { CreateProblemRequestForm } from "../forms/CreateProblemRequestForm";
 

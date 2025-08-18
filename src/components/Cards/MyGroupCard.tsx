@@ -1,10 +1,10 @@
 import { User, Users } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { GroupPopulateGroupMemberPopulateAccountSecureModel } from "../../types/models/Group.model";
-import { onMiddleClickOpenInNewTab } from "../../utilities/OnMiddleClickOpenInNewTab";
-import { readableDateFormat } from "../../utilities/ReadableDateFormat";
-import { Card, CardContent } from "../shadcn/Card";
+import { GroupPopulateGroupMemberPopulateAccountSecureModel } from "@/types/models/Group.model";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
+import { Card, CardContent } from "@/components/shadcn/Card";
 
 const MyGroupCard = ({
     group

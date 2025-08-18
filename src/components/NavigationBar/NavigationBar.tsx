@@ -5,7 +5,7 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	navigationMenuTriggerStyle
-} from "../shadcn/NevigationMenu";
+} from "@/components/shadcn/NevigationMenu";
 
 
 import { LoginContext } from "../../contexts/LoginContext";

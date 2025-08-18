@@ -1,11 +1,11 @@
 import { CopyPlus, PencilIcon, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CollectionService } from "../../services/Collection.service";
-import { TopicService } from "../../services/Topic.service";
-import { transformCreateCourseRequestForm2CreateTopicRequest } from "../../types/adapters/CreateCourseRequestForm.adapter";
-import { transformTopicPopulateTopicCollectionPopulateCollectionAndTopicGroupPermissionPopulateGroupModel2CreateCourseRequest } from "../../types/adapters/Topic.adapter";
-import { TopicModel } from "../../types/models/Topic.model";
+import { CollectionService } from "@/services/Collection.service";
+import { TopicService } from "@/services/Topic.service";
+import { transformCreateCourseRequestForm2CreateTopicRequest } from "@/types/adapters/CreateCourseRequestForm.adapter";
+import { transformTopicPopulateTopicCollectionPopulateCollectionAndTopicGroupPermissionPopulateGroupModel2CreateCourseRequest } from "@/types/adapters/Topic.adapter";
+import { TopicModel } from "@/types/models/Topic.model";
 import DeleteCourseConfirmationDialog from "../Dialogs/DeleteCourseConfirmationDialog";
 import {
 	DropdownMenu,
@@ -13,8 +13,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "../shadcn/DropdownMenu";
-import { toast } from "../shadcn/UseToast";
+} from "@/components/shadcn/DropdownMenu";
+import { toast } from "@/components/shadcn/UseToast";
 
 const MyCourseDropdown = ({
 	children,

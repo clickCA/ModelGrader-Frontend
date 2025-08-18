@@ -1,13 +1,13 @@
 import { CopyPlus, PencilIcon, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProblemService } from "../../services/Problem.service";
-import { transformCreateProblemRequestForm2CreateProblemRequest } from "../../types/adapters/CreateProblemRequestForm.adapter";
+import { ProblemService } from "@/services/Problem.service";
+import { transformCreateProblemRequestForm2CreateProblemRequest } from "@/types/adapters/CreateProblemRequestForm.adapter";
 import {
 	ProblemModel,
 	ProblemPopulateTestcases,
 	ProblemSecureModel,
-} from "../../types/models/Problem.model";
+} from "@/types/models/Problem.model";
 import DeleteProblemConfirmationDialog from "../Dialogs/DeleteProblemConfirmationDialog";
 import {
 	ContextMenu,
@@ -15,9 +15,9 @@ import {
 	ContextMenuItem,
 	ContextMenuSeparator,
 	ContextMenuTrigger,
-} from "../shadcn/ContextMenu";
-import { toast } from "../shadcn/UseToast";
-import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "./../../types/adapters/Problem.adapter";
+} from "@/components/shadcn/ContextMenu";
+import { toast } from "@/components/shadcn/UseToast";
+import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "@/types/adapters/Problem.adapter";
 
 const MyProblemContextMenu = ({
 	children,

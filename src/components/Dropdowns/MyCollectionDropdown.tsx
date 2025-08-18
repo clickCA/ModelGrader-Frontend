@@ -1,11 +1,11 @@
 import { CopyPlus, PencilIcon, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CollectionService } from "../../services/Collection.service";
-import { ProblemService } from "../../services/Problem.service";
-import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "../../types/adapters/Collection.adapter";
-import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "../../types/adapters/CreateCollectionRequestForm.adapter";
-import { CollectionModel } from "../../types/models/Collection.model";
+import { CollectionService } from "@/services/Collection.service";
+import { ProblemService } from "@/services/Problem.service";
+import { transformCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupModel2CreateCollectionRequest } from "@/types/adapters/Collection.adapter";
+import { transformCreateCollectionRequestForm2CreateCollectionRequestForm } from "@/types/adapters/CreateCollectionRequestForm.adapter";
+import { CollectionModel } from "@/types/models/Collection.model";
 import DeleteCollectionConfirmationDialog from "../Dialogs/DeleteCollectionConfirmationDialog";
 import {
 	DropdownMenu,
@@ -13,8 +13,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "../shadcn/DropdownMenu";
-import { toast } from "../shadcn/UseToast";
+} from "@/components/shadcn/DropdownMenu";
+import { toast } from "@/components/shadcn/UseToast";
 
 const MyCollectionDropdown = ({
 	children,

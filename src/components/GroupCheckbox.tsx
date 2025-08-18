@@ -1,4 +1,4 @@
-import { GroupModel } from "../types/models/Group.model";
+import { GroupModel } from "@/types/models/Group.model";
 import { Checkbox } from "./shadcn/Checkbox";
 
 const GroupCheckbox = ({

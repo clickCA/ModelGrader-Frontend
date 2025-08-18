@@ -1,4 +1,4 @@
-import { handleDeprecatedDescription } from "../../utilities/HandleDeprecatedDescription";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
 import { CreateProblemRequestForm } from "../forms/CreateProblemRequestForm";
 import { ProblemHashedTable, ProblemModel, ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel, ProblemPopulateTestcases } from "../models/Problem.model";
 

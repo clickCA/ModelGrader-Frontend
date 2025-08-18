@@ -1,10 +1,10 @@
 import { FileSpreadsheet, LibraryBig, StepForward } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "../../types/models/Submission.model";
-import { readableDateFormat } from "../../utilities/ReadableDateFormat";
+import { SubmissionPopulateSubmissionTestcaseAndProblemSecureModel } from "@/types/models/Submission.model";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import TestcasesGradingIndicator from "../TestcasesGradingIndicator";
-import { Button } from "../shadcn/Button";
-import { Card } from "../shadcn/Card";
+import { Button } from "@/components/shadcn/Button";
+import { Card } from "@/components/shadcn/Card";
 
 const SubmissionCard = ({
 	submission,

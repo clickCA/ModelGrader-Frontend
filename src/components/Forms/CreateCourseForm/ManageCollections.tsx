@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { CollectionService } from "../../../services/Collection.service";
-import { transformCollectionPopulateProblemSecureModel2CollectionHashedTable } from "../../../types/adapters/Collection.adapter";
+import { CollectionService } from "@/services/Collection.service";
+import { transformCollectionPopulateProblemSecureModel2CollectionHashedTable } from "@/types/adapters/Collection.adapter";
 import {
 	CollectionItemInterface,
 	CreateCourseRequestForm,
-} from "../../../types/forms/CreateCourseRequestForm";
+} from "@/types/forms/CreateCourseRequestForm";
 import {
 	CollectionHashedTable,
 	CollectionPopulateCollectionProblemPopulateProblemModel,
-} from "../../../types/models/Collection.model";
+} from "@/types/models/Collection.model";
 import MyCollectionMiniCard2 from "../../Cards/CollectionCards/MyCollectionMiniCard2";
-import { Input } from "../../shadcn/Input";
-import { ScrollArea } from "../../shadcn/ScrollArea";
-import { Separator } from "../../shadcn/Seperator";
+import { Input } from "@/components/shadcn/Input";
+import { ScrollArea } from "@/components/shadcn/ScrollArea";
+import { Separator } from "@/components/shadcn/Seperator";
 
 const ManageCollections = ({
 	createRequest,

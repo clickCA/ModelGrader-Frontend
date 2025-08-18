@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GroupSerivceAPI } from "../types/apis/Group.api";
+import { GroupSerivceAPI } from "@/types/apis/Group.api";
 import { BASE_URL } from "../constants/BackendBaseURL";
 
 export const GroupService: GroupSerivceAPI = {

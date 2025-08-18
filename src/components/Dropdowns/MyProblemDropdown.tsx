@@ -1,14 +1,14 @@
 import { BarChart3, CopyPlus, PencilIcon, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProblemService } from "../../services/Problem.service";
-import { transformCreateProblemRequestForm2CreateProblemRequest } from "../../types/adapters/CreateProblemRequestForm.adapter";
-import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "../../types/adapters/Problem.adapter";
+import { ProblemService } from "@/services/Problem.service";
+import { transformCreateProblemRequestForm2CreateProblemRequest } from "@/types/adapters/CreateProblemRequestForm.adapter";
+import { transformProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel2CreateProblemRequestForm } from "@/types/adapters/Problem.adapter";
 import {
     ProblemModel,
     ProblemPopulateTestcases,
     ProblemSecureModel,
-} from "../../types/models/Problem.model";
+} from "@/types/models/Problem.model";
 import DeleteProblemConfirmationDialog from "../Dialogs/DeleteProblemConfirmationDialog";
 import {
     DropdownMenu,
@@ -16,8 +16,8 @@ import {
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "../shadcn/DropdownMenu";
-import { toast } from "../shadcn/UseToast";
+} from "@/components/shadcn/DropdownMenu";
+import { toast } from "@/components/shadcn/UseToast";
 
 const MyProblemDropdown = ({
 	children,

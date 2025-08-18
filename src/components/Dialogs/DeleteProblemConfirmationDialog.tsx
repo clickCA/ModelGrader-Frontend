@@ -1,8 +1,8 @@
 import React from "react";
-import { ProblemService } from "../../services/Problem.service";
-import { ProblemModel, ProblemPopulateTestcases, ProblemSecureModel } from "../../types/models/Problem.model";
-import { Button } from "../shadcn/Button";
-import { Dialog, DialogContent } from "../shadcn/Dialog";
+import { ProblemService } from "@/services/Problem.service";
+import { ProblemModel, ProblemPopulateTestcases, ProblemSecureModel } from "@/types/models/Problem.model";
+import { Button } from "@/components/shadcn/Button";
+import { Dialog, DialogContent } from "@/components/shadcn/Dialog";
 
 const DeleteProblemConfirmationDialog = ({
   open,

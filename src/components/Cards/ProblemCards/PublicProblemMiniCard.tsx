@@ -1,10 +1,10 @@
 import { FileSpreadsheet, Puzzle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../../types/models/Problem.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
+import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
 import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
-import { Button } from "../../shadcn/Button";
-import { Card } from "../../shadcn/Card";
+import { Button } from "@/components/shadcn/Button";
+import { Card } from "@/components/shadcn/Card";
 
 const PublicProblemMiniCard = ({
 	problem,

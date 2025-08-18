@@ -1,8 +1,8 @@
 import axios from "axios";
-import { AuthServiceAPI } from "../types/apis/Auth.api";
+import { AuthServiceAPI } from "@/types/apis/Auth.api";
 import { BASE_URL } from "../constants/BackendBaseURL";
-import { AccountModel } from "../types/models/Account.model";
-import { AuthenticationResultResponse } from "../types/models/Auth.model";
+import { AccountModel } from "@/types/models/Account.model";
+import { AuthenticationResultResponse } from "@/types/models/Auth.model";
 
 export const AuthService: AuthServiceAPI = {
     login: async (request) => {

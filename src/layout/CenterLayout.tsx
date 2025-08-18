@@ -1,4 +1,4 @@
-import { Props } from "../types/Props";
+import { Props } from "@/types/Props";
 import NavbarMenuLayout from "./NavbarMenuLayout";
 
 const CenterContainer = ({ children, className = "" }: Props) => {

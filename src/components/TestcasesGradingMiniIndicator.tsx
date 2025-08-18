@@ -1,5 +1,5 @@
 import { TestcaseStatusIndicatorColor } from '../constants/TestcaseStatusIndicatorColor';
-import { SubmissionTestcaseSecureModel } from '../types/models/Submission.model';
+import { SubmissionTestcaseSecureModel } from '@/types/models/Submission.model';
 
 const TestcaseGradingMiniResult = ({
 	status,

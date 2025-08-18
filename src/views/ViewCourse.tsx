@@ -5,7 +5,7 @@ import ReadOnlyPlate from "../components/ReadOnlyPlate";
 import { ScrollArea } from "../components/shadcn/ScrollArea";
 import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContexnt";
 import CourseNavbarSidebarLayout from "../layout/CourseNavbarSidebarLayout";
-import { handleDeprecatedDescription } from "../utilities/HandleDeprecatedDescription";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
 
 const ViewCourse = () => {
 	const { course } = useContext(CourseNavSidebarContext);

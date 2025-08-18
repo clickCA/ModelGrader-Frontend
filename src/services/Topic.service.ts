@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/BackendBaseURL";
-import { GetAllTopicsByAccountResponse, TopicSerivceAPI } from "../types/apis/Topic.api";
-import { TopicModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupAndTopicGroupPermissionPopulateGroupModel } from "../types/models/Topic.model";
+import { GetAllTopicsByAccountResponse, TopicSerivceAPI } from "@/types/apis/Topic.api";
+import { TopicModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupAndTopicGroupPermissionPopulateGroupModel } from "@/types/models/Topic.model";
 
 export const TopicService: TopicSerivceAPI = {
     create: async (accountId, request) => {

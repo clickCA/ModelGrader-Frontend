@@ -7,13 +7,13 @@ import { ProgrammingLanguageOptions } from "../constants/ProgrammingLanguage";
 import {
   ProblemPoplulateCreatorModel,
   ProblemPopulateCreatorSecureModel,
-} from "../types/models/Problem.model";
+} from "@/types/models/Problem.model";
 import {
   GetSubmissionByAccountProblemResponse,
   SubmissionPopulateSubmissionTestcasesSecureModel,
-} from "../types/models/Submission.model";
-import { handleDeprecatedDescription } from "../utilities/HandleDeprecatedDescription";
-import { readableDateFormat } from "../utilities/ReadableDateFormat";
+} from "@/types/models/Submission.model";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import PreviousSubmissionsCombobox from "./PreviousSubmissionsCombobox";
 import ReadOnlyPlate from "./ReadOnlyPlate";
 import TestcasesGradingIndicator from "./TestcasesGradingIndicator";
