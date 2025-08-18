@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/BackendBaseURL";
-import { GetAllTopicsByAccountResponse, TopicSerivceAPI } from "@/types/apis/Topic.api";
-import { TopicModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupAndTopicGroupPermissionPopulateGroupModel } from "@/types/models/Topic.model";
+import { GetAllTopicsByAccountResponse, TopicSerivceAPI } from "../types/apis/Topic.api";
+import { TopicModel, TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemsPopulateProblemAndCollectionGroupPermissionsPopulateGroupAndTopicGroupPermissionPopulateGroupModel } from "../types/models/Topic.model";
 
 export const TopicService: TopicSerivceAPI = {
     create: async (accountId, request) => {
@@ -42,7 +42,7 @@ export const TopicService: TopicSerivceAPI = {
     },
 
     getPublicByAccount: async (accountId,topicId) => {
-        const response = await axios.get<TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel>(`${BASE_URL}/api/topics/${topicId}?account_id=${accountId}`);
+        const response = await axios.get<TopicModel>(`${BASE_URL}/api/topics/${topicId}?account_id=${accountId}`);
         return response;
     },
 

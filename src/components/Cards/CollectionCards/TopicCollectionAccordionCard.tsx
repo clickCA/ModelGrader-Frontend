@@ -1,6 +1,6 @@
 import { Check, FileCheck, Folder } from "lucide-react";
-import { CollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Collection.model";
-import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
+import { CollectionModel } from "../../../types/models/Collection.model";
+import { handleDeprecatedDescription } from "../../../utilities/HandleDeprecatedDescription";
 import ReadOnlyPlate from "../../ReadOnlyPlate";
 import PublicProblemsTable from "../../Tables/ProblemTables/PublicProblemsTable";
 import {
@@ -12,17 +12,17 @@ import {
 import { Badge } from "@/components/shadcn/Badge";
 import { Card } from "@/components/shadcn/Card";
 
-const isPassed = (collection: CollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel):boolean => {
-	return collection.problems.filter(
+const isPassed = (collection: CollectionModel):boolean => {
+	return collection.problems?.filter(
 		(collectionProblem) =>
 			collectionProblem.problem.best_submission
 				?.is_passed
-	).length === collection.problems.length
+	).length === collection.problems?.length
 }
 const TopicCollectionAccordianCard = ({
 	collection,
 }: {
-	collection: CollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel;
+	collection: CollectionModel;
 }) => {
 	return (
 		<Card className="px-5 cursor-pointer">
@@ -42,13 +42,13 @@ const TopicCollectionAccordianCard = ({
 							<div className={isPassed(collection) ? "text-green-600 font-bold" : ""}>
 								(
 								{
-									collection.problems.filter(
+									collection.problems?.filter(
 										(collectionProblem) =>
 											collectionProblem.problem
 												.best_submission?.is_passed
 									).length
 								}
-								/{collection.problems.length})
+								/{collection.problems?.length || 0})
 							</div>
 						</div>
 
@@ -67,10 +67,10 @@ const TopicCollectionAccordianCard = ({
 						/>
 
 						<PublicProblemsTable
-							problems={collection.problems.map(
+							problems={collection.problems?.map(
 								(collectionProblem) =>
 									collectionProblem.problem
-							)}
+							) || []}
 						/>
 
 						{/* <ScrollArea className="mt-6 pr-5">

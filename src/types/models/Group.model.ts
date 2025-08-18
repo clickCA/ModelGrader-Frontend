@@ -1,4 +1,6 @@
 import { AccountSecureModel } from "./Account.model";
+import { ProblemModel } from "./Problem.model";
+import { TopicModel } from "./Topic.model";
 
 export type GroupModel = {
     group_id: string;
@@ -38,19 +40,19 @@ export type GroupHashedTable = {
 
 export type TopicGroupPermissionModel = {
     topic_group_permission_id: string
-    group: string
+    group: GroupModel
     permission_manage_topics: boolean
     permission_view_topics: boolean
     permission_view_topics_log: boolean
-    topic: string
+    topic: TopicModel
 }
 
 export type ProblemGroupPermissionModel = {
     problem_group_permission_id: string
-    group: string
+    group: GroupModel
     permission_manage_problems: boolean
     permission_view_problems: boolean
-    problem: string
+    problem: ProblemModel
 }
 
 export type TopicGroupPermissionPopulateGroupModel = TopicGroupPermissionModel & {

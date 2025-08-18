@@ -4,7 +4,6 @@ import {
 	CollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
 import { FileText, Folder } from "lucide-react";
-import { TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../types/models/Topic.model";
 import { DropdownMenu } from "../ui/dropdown-menu";
 import {
 	Sidebar,
@@ -18,13 +17,14 @@ import {
 	SidebarMenuItem,
 	SidebarMenuSub,
 } from "../ui/sidebar";
+import { TopicModel } from "../../types/models/Topic.model";
 
 const CourseNavSidebar2 = ({
 	course,
 	recentOpenCollection = [],
 	onChange = () => {},
 }: {
-	course: TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel;
+	course: TopicModel;
 	recentOpenCollection?: string[];
 	onChange?: (id: string, isOpen: boolean) => void;
 }) => {
@@ -52,7 +52,7 @@ const CourseNavSidebar2 = ({
 					<SidebarGroupLabel>Collections</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
-							{course?.collections.map((collection) => (
+							{course?.collections?.map((collection) => (
 								<Collapsible
                                 onOpenChange={(open) => handleOpenChange(open, collection.collection?.collection_id)}
 									defaultOpen={recentOpenCollection.includes(
@@ -77,7 +77,7 @@ const CourseNavSidebar2 = ({
 										</CollapsibleTrigger>
 										<CollapsibleContent>
 											<SidebarMenuSub>
-												{collection.collection?.problems.map(
+												{collection.collection?.problems?.map(
 													(problem) => (
 														<SidebarMenuButton
 															key={

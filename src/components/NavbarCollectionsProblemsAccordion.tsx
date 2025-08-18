@@ -2,8 +2,8 @@ import { FileCheck, FileSpreadsheet, Folder } from "lucide-react";
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContexnt";
-import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
-import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Topic.model";
+import { ProblemModel } from "../types/models/Problem.model";
+import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../types/models/Topic.model";
 import {
 	Accordion,
 	AccordionContent,
@@ -16,7 +16,7 @@ import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab
 const NavbarCollectionProblemCard = ({
 	problem
 }:{
-	problem: ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel
+	problem: ProblemModel
 }) => {
 
 	const {courseId,problemId} = useParams()
