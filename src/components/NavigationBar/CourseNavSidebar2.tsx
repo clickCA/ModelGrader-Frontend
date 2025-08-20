@@ -1,8 +1,8 @@
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@radix-ui/react-collapsible';
 import { FileCheck, FileSpreadsheet, Folder } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { TopicModel } from '../../types/models/Topic.model';
-import { DropdownMenu } from '../ui/dropdown-menu';
+import { TopicModel } from '@/types/models/Topic.model';
+import { DropdownMenu } from '@/components/ui/dropdown-menu';
 import {
   Sidebar,
   SidebarContent,
@@ -15,6 +15,7 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
 } from '../ui/sidebar';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
 const CourseNavSidebar2 = ({
   course,
@@ -33,6 +34,7 @@ const CourseNavSidebar2 = ({
 
   const goToProblemView = (problemId: string) => {
     navigate(`/courses/${course.topic_id}/problems/${problemId}`);
+    window.location.reload();
   };
 
   return (
@@ -59,8 +61,19 @@ const CourseNavSidebar2 = ({
                   <SidebarMenuItem key="1">
                     <CollapsibleTrigger asChild>
                       <SidebarMenuButton className="py-6">
-                        <Folder size={16} className="mr-2 text-yellow-400" />
-                        <span className="font-semibold">{collection.collection?.name}</span>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="flex items-center w-full ">
+                              <Folder size={16} className="mr-2 text-yellow-400 flex-shrink-0" />
+                              <span className="font-semibold line-clamp-1 min-w-0 overflow-ellipsis">
+                                {collection.collection?.name}
+                              </span>
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>{collection.collection?.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
@@ -70,19 +83,25 @@ const CourseNavSidebar2 = ({
                             <SidebarMenuButton
                               onClick={() => goToProblemView(problem.problem?.problem_id)}
                               key={problem.problem?.problem_id}>
-                              <a href={`/courses/${course.topic_id}/problems/${problem.problem?.problem_id}`}>
-                                <div className="flex items-center my-1">
-                                  <span className="">
-                                    {problem.problem?.best_submission?.is_passed ? (
-                                      <FileCheck size={18} className="text-green-500 mr-2" />
-                                    ) : (
-                                      <FileSpreadsheet size={18} className="text-blue-400 mr-2" />
-                                    )}
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <span className="flex items-center my-1">
+                                    <span>
+                                      {problem.problem?.best_submission?.is_passed ? (
+                                        <FileCheck size={18} className="text-green-500 mr-2" />
+                                      ) : (
+                                        <FileSpreadsheet size={18} className="text-blue-400 mr-2" />
+                                      )}
+                                    </span>
+                                    <span className="font-mono text-xs line-clamp-1 overflow-ellipsis">
+                                      {problem.problem?.title}
+                                    </span>
                                   </span>
-                                  <span className="font-mono text-xs line-clamp-1">
-                                    {problem.problem?.title}</span>
-                                </div>
-                              </a>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <span>{problem.problem?.title}</span>
+                                </TooltipContent>
+                              </Tooltip>
                             </SidebarMenuButton>
                           ))
                         ) : (
