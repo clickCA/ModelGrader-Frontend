@@ -18,7 +18,7 @@ const CourseLayout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <SidebarProvider open={isOpenSidebar}>
-            <div>{children}</div>
+            <div className='w-full'>{children}</div>
         </SidebarProvider>
     );
 };

@@ -27,7 +27,7 @@ const ViewCourse = () => {
             />
           )}
 
-          <ScrollArea className="h-[70vh]">
+          <ScrollArea className="h-[70vh] pr-4">
             <div className="grid gap-y-2">
               {course?.collections?.map((tc) => (
                 <TopicCollectionAccordionCard collection={tc.collection} />
