@@ -1,7 +1,7 @@
 import { ChevronRight, LibraryBig, X } from "lucide-react";
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CourseNavSidebarContext } from "../../contexts/CourseNavSidebarContexnt";
+import { CourseNavSidebarContext } from "../../contexts/CourseNavSidebarContext";
 import { TopicService } from "@/services/Topic.service";
 import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Topic.model";
 import NavbarCollectionsProblemsAccordion from "../NavbarCollectionsProblemsAccordion";

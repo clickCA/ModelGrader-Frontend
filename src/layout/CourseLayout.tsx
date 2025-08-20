@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { SidebarProvider } from '../components/ui/sidebar';
-import { CourseNavSidebarContext } from '@/contexts/CourseNavSidebarContexnt';
+import { CourseNavSidebarContext } from '@/contexts/CourseNavSidebarContext';
 
 const CourseLayout = ({ children }: { children: React.ReactNode }) => {
     const { isOpenSidebar, setIsOpenSidebar } = useContext(CourseNavSidebarContext);

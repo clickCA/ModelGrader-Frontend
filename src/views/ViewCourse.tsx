@@ -3,7 +3,7 @@ import { useContext } from "react";
 import TopicCollectionAccordionCard from "../components/Cards/CollectionCards/TopicCollectionAccordionCard";
 import ReadOnlyPlate from "../components/ReadOnlyPlate";
 import { ScrollArea } from "../components/shadcn/ScrollArea";
-import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContexnt";
+import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContext";
 import CourseNavbarSidebarLayout from "../layout/CourseNavbarSidebarLayout";
 import { handleDeprecatedDescription } from "../utilities/HandleDeprecatedDescription";
 import CourseLayout from "../layout/CourseLayout";

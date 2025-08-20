@@ -4,7 +4,7 @@ import { Toaster } from "./components/shadcn/Toaster";
 import {
 	CourseNavSidebarContext,
 	GetCourseNavSidebarContextStateValue,
-} from "./contexts/CourseNavSidebarContexnt";
+} from "./contexts/CourseNavSidebarContext";
 import { LoginContext } from "./contexts/LoginContext";
 import { NavSidebarContext } from "./contexts/NavSidebarContext";
 import Router from "./router";

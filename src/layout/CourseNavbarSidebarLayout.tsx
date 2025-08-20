@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import NavbarMenuLayout from "./NavbarMenuLayout";
 import { Separator } from "../components/shadcn/Seperator";
-import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContexnt";
+import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContext";
 import CourseNavSidebar2 from "../components/NavigationBar/CourseNavSidebar2";
 import { TopicService } from "../services/Topic.service";
 import { useParams } from "react-router-dom";

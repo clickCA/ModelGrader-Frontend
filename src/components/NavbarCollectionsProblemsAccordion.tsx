@@ -1,7 +1,7 @@
 import { FileCheck, FileSpreadsheet, Folder } from "lucide-react";
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContexnt";
+import { CourseNavSidebarContext } from "../contexts/CourseNavSidebarContext";
 import { ProblemModel } from "../types/models/Problem.model";
 import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../types/models/Topic.model";
 import {

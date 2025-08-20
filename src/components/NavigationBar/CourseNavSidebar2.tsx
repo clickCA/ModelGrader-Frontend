@@ -16,7 +16,7 @@ import {
     SidebarMenuSub,
 } from '../ui/sidebar';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
-import { CourseNavSidebarContext } from '@/contexts/CourseNavSidebarContexnt';
+import { CourseNavSidebarContext } from '@/contexts/CourseNavSidebarContext';
 import { useContext } from 'react';
 import { cn } from '@/lib/utils';
 
