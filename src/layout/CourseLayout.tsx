@@ -1,12 +1,26 @@
-import React from "react";
-import { SidebarProvider } from "../components/ui/sidebar";
+import React, { useContext, useEffect } from 'react';
+import { SidebarProvider } from '../components/ui/sidebar';
+import { CourseNavSidebarContext } from '@/contexts/CourseNavSidebarContexnt';
 
 const CourseLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <SidebarProvider>
-      <div>{children}</div>
-    </SidebarProvider>
-  );
+    const { isOpenSidebar, setIsOpenSidebar } = useContext(CourseNavSidebarContext);
+
+    useEffect(() => {
+        const isOpenSidebarStorage = localStorage.getItem('isOpenSidebar');
+        if (isOpenSidebarStorage) {
+            setIsOpenSidebar(isOpenSidebarStorage === 'true');
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('isOpenSidebar', isOpenSidebar.toString());
+    }, [isOpenSidebar])
+
+    return (
+        <SidebarProvider open={isOpenSidebar}>
+            <div>{children}</div>
+        </SidebarProvider>
+    );
 };
 
 export default CourseLayout;

@@ -10,6 +10,8 @@ export type CourseNavSidebarContextType = {
     setCourse: React.Dispatch<React.SetStateAction<TopicModel | undefined>>;
     recentOpenCollection: string[];
     setRecentOpenCollection: React.Dispatch<React.SetStateAction<string[]>>;
+    isOpenSidebar: boolean;
+    setIsOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const iCourseNavSidebarContextState: CourseNavSidebarContextType = {
@@ -20,7 +22,9 @@ const iCourseNavSidebarContextState: CourseNavSidebarContextType = {
     course: undefined,
     setCourse: () => {},
     recentOpenCollection: [],
-    setRecentOpenCollection: () => {}
+    setRecentOpenCollection: () => {},
+    isOpenSidebar: true,
+    setIsOpenSidebar: () => {}
 }
 
 export const GetCourseNavSidebarContextStateValue = ():CourseNavSidebarContextType => {
@@ -28,6 +32,7 @@ export const GetCourseNavSidebarContextStateValue = ():CourseNavSidebarContextTy
 	const [isOpen, setIsOpen] = useState(false);
 	const [section, setSection] = useState("");
     const [recentOpenCollection, setRecentOpenCollection] = useState<string[]>([]);
+    const [isOpenSidebar, setIsOpenSidebar] = useState(true);
 
     return {
         course,
@@ -37,7 +42,9 @@ export const GetCourseNavSidebarContextStateValue = ():CourseNavSidebarContextTy
         section,
         setSection,
         recentOpenCollection,
-        setRecentOpenCollection
+        setRecentOpenCollection,
+        isOpenSidebar,
+        setIsOpenSidebar
     }
 }
 
