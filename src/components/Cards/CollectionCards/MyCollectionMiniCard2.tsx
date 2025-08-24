@@ -1,14 +1,13 @@
 import {
-	Folder
+    Folder
 } from "lucide-react";
 import { useState } from "react";
 import {
-	CollectionPopulateCollectionProblemPopulateProblemModel,
-	CollectionPopulateProblemSecureModel
-} from "@/types/models/Collection.model";
-import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
-import MyCollectionContextMenu from "@/components/ContextMenus/MyCollectionContextMenu";
-import { Card } from "@/components/shadcn/Card";
+    CollectionModel
+} from "../../../types/models/Collection.model";
+import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
+import MyCollectionContextMenu from "../../ContextMenus/MyCollectionContextMenu";
+import { Card } from "../../shadcn/Card";
 
 
 
@@ -18,7 +17,7 @@ const MyCollectionMiniCard2 = ({
 	disabledHighlight = false,
 	onClick = () => {},
 }: {
-	collection: CollectionPopulateProblemSecureModel | CollectionPopulateCollectionProblemPopulateProblemModel;
+	collection: CollectionModel;
 	disabled?: boolean;
 	disabledHighlight?: boolean;
 	onClick?: () => void;
@@ -63,7 +62,7 @@ const MyCollectionMiniCard2 = ({
 						<p className="line-clamp-1">{collection.name}</p>
 					</div>
 					<div className="bg-blue-600 w-4 h-4 text-center text-white rounded-full text-xs">
-						{collection.problems.length}
+						{collection.problems?.length || 0}
 					</div>
 				</div>
 			</Card>

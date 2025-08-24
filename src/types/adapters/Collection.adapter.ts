@@ -3,7 +3,7 @@ import { CreateCollectionRequestForm } from "../forms/CreateCollectionRequestFor
 import { CollectionHashedTable, CollectionPopulateCollectionProblemPopulateProblemModel, CollectionPopulateCollectionProblemsPopulateProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupAndCollectionGroupPermissionsPopulateGroupModel } from "../models/Collection.model";
 
 export function transformCollectionPopulateProblemSecureModel2CollectionHashedTable(collections: CollectionPopulateCollectionProblemPopulateProblemModel[] ): CollectionHashedTable {
-    let result:CollectionHashedTable = {};
+    const result: CollectionHashedTable = {};
     for (const collection of collections) {
         result[collection.collection_id] = collection;
     }

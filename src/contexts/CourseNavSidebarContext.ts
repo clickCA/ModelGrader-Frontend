@@ -1,15 +1,17 @@
 import { createContext, useState } from "react";
-import { TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Topic.model";
+import { TopicModel } from "../types/models/Topic.model";
 
 export type CourseNavSidebarContextType = {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     section: string;
     setSection: React.Dispatch<React.SetStateAction<string>>;
-    course?: TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel
-    setCourse: React.Dispatch<React.SetStateAction<TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel | undefined>>;
+    course?: TopicModel
+    setCourse: React.Dispatch<React.SetStateAction<TopicModel | undefined>>;
     recentOpenCollection: string[];
     setRecentOpenCollection: React.Dispatch<React.SetStateAction<string[]>>;
+    isOpenSidebar: boolean;
+    setIsOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const iCourseNavSidebarContextState: CourseNavSidebarContextType = {
@@ -20,14 +22,17 @@ const iCourseNavSidebarContextState: CourseNavSidebarContextType = {
     course: undefined,
     setCourse: () => {},
     recentOpenCollection: [],
-    setRecentOpenCollection: () => {}
+    setRecentOpenCollection: () => {},
+    isOpenSidebar: true,
+    setIsOpenSidebar: () => {}
 }
 
-export const getCourseNavSidebarContextStateValue = ():CourseNavSidebarContextType => {
-    const [course, setCourse] = useState<TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel>();
+export const GetCourseNavSidebarContextStateValue = ():CourseNavSidebarContextType => {
+    const [course, setCourse] = useState<TopicModel | undefined>();
 	const [isOpen, setIsOpen] = useState(false);
 	const [section, setSection] = useState("");
     const [recentOpenCollection, setRecentOpenCollection] = useState<string[]>([]);
+    const [isOpenSidebar, setIsOpenSidebar] = useState(true);
 
     return {
         course,
@@ -37,7 +42,9 @@ export const getCourseNavSidebarContextStateValue = ():CourseNavSidebarContextTy
         section,
         setSection,
         recentOpenCollection,
-        setRecentOpenCollection
+        setRecentOpenCollection,
+        isOpenSidebar,
+        setIsOpenSidebar
     }
 }
 

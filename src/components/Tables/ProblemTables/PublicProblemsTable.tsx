@@ -2,7 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { FileSpreadsheet, Puzzle } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
-import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
+import { ProblemModel } from "../../../types/models/Problem.model";
 import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
 import { Badge } from "@/components/shadcn/Badge";
 import { Button } from "@/components/shadcn/Button";
@@ -16,11 +16,11 @@ import { DataTable } from "../Prototype/DataTable";
 const PublicProblemsTable = ({
 	problems,
 }: {
-	problems: ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel[];
+	problems: ProblemModel[];
 }) => {
 	const { courseId } = useParams();
 
-	const columns: ColumnDef<ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel>[] =
+	const columns: ColumnDef<ProblemModel>[] =
 		[
 			{
 				accessorKey: "title",

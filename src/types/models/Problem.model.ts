@@ -1,6 +1,7 @@
 import { ProblemGroupPermissionPopulateGroupModel } from "../apis/Problem.api"
 import { AccountModel, AccountSecureModel } from "./Account.model"
-import { SubmissionPopulateSubmissionTestcasesSecureModel } from "./Submission.model"
+import { ProblemGroupPermissionModel } from "./Group.model"
+import { SubmissionModel, SubmissionPopulateSubmissionTestcasesSecureModel } from "./Submission.model"
 
 export type TestcaseModel = {
     testcase_id: string
@@ -20,12 +21,14 @@ export type ProblemModel = {
     is_active: boolean
     is_private: boolean
     submission_regex: string
-    creator: string
+    creator: AccountModel
     testcases: TestcaseModel[]
     created_date: string;
     updated_date: string;
     allowed_languages: string
     difficulty: number;
+    best_submission?: SubmissionModel
+    group_permissions: ProblemGroupPermissionModel[]
 }
 
 export type ProblemSecureModel = {
