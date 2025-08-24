@@ -1,13 +1,13 @@
 import { FileSpreadsheet, Puzzle } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../../types/models/Problem.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
-import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
+import { ProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Problem.model";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import TestcasesGradingIndicator from "../../TestcasesGradingIndicator";
-import { Button } from "../../shadcn/Button";
-import { Card, CardContent } from "../../shadcn/Card";
-import { Label } from "../../shadcn/Label";
+import { Button } from "@/components/shadcn/Button";
+import { Card, CardContent } from "@/components/shadcn/Card";
+import { Label } from "@/components/shadcn/Label";
 
 const PublicProblemCard = ({
 	problem,

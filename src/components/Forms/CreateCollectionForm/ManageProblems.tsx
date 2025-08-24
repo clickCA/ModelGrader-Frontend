@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { ProblemService } from "../../../services/Problem.service";
-import { transformProblemModel2ProblemHashedTable } from "../../../types/adapters/Problem.adapter";
+import { ProblemService } from "@/services/Problem.service";
+import { transformProblemModel2ProblemHashedTable } from "@/types/adapters/Problem.adapter";
 import {
 	CreateCollectionRequestForm,
 	ProblemItemInterface,
-} from "../../../types/forms/CreateCollectionRequestForm";
-import { ProblemHashedTable } from "../../../types/models/Problem.model";
+} from "@/types/forms/CreateCollectionRequestForm";
+import { ProblemHashedTable } from "@/types/models/Problem.model";
 import MyProblemMiniCard2 from "../../Cards/ProblemCards/MyProblemMiniCard2";
-import { Input } from "../../shadcn/Input";
-import { ScrollArea } from "../../shadcn/ScrollArea";
-import { Separator } from "../../shadcn/Seperator";
+import { Input } from "@/components/shadcn/Input";
+import { ScrollArea } from "@/components/shadcn/ScrollArea";
+import { Separator } from "@/components/shadcn/Seperator";
 
 const ManageProblems = ({
 	createRequest,

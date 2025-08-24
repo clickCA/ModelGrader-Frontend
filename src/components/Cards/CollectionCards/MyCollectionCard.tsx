@@ -1,12 +1,12 @@
 import { FileSpreadsheet, Folder } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CollectionPopulateCollectionProblemPopulateProblemModel } from "../../../types/models/Collection.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
-import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
+import { CollectionPopulateCollectionProblemPopulateProblemModel } from "@/types/models/Collection.model";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import Checkmark from "../../Checkmark";
-import MyCollectionContextMenu from "../../ContextMenus/MyCollectionContextMenu";
-import { Card, CardContent } from "../../shadcn/Card";
+import MyCollectionContextMenu from "@/components/ContextMenus/MyCollectionContextMenu";
+import { Card, CardContent } from "@/components/shadcn/Card";
 
 const MyCollectionCard = ({
 	collection

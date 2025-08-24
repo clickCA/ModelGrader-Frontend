@@ -21,8 +21,8 @@ import {
 } from "../components/shadcn/Form";
 import { Input } from "../components/shadcn/Input";
 import CenterContainer from "../layout/CenterLayout";
-import { AuthService } from "../services/Auth.service";
-// import { getAuthorization, login } from "../services/auth.service";
+import { AuthService } from "@/services/Auth.service";
+// import { getAuthorization, login } from "@/services/auth.service";
 
 const Login = () => {
 	const form = useForm();

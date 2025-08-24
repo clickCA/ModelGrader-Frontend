@@ -8,8 +8,8 @@ import { Input } from "../../../components/shadcn/Input";
 import { Tabs, TabsList, TabsTrigger } from "../../../components/shadcn/Tabs";
 import { NavSidebarContext } from "../../../contexts/NavSidebarContext";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { CollectionService } from "../../../services/Collection.service";
-import { CollectionPopulateCollectionProblemPopulateProblemModel } from "../../../types/models/Collection.model";
+import { CollectionService } from "@/services/Collection.service";
+import { CollectionPopulateCollectionProblemPopulateProblemModel } from "@/types/models/Collection.model";
 
 const MyCollections = () => {
 	const navigate = useNavigate();

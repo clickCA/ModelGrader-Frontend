@@ -1,11 +1,11 @@
 import { Editor as MonacoEditor } from "@monaco-editor/react";
 import React from "react";
-import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "../../types/models/Problem.model";
-import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "../../types/models/Submission.model";
+import { ProblemPopulateAccountAndTestcasesAndProblemGroupPermissionsPopulateGroupModel } from "@/types/models/Problem.model";
+import { SubmissionPopulateSubmissionTestcaseAndAccountModel } from "@/types/models/Submission.model";
 import TestcaseValidationAccordian from "../TestcaseValidationAccordion";
-import { Dialog, DialogContent, DialogTrigger } from "../shadcn/Dialog";
-import { ScrollArea } from "../shadcn/ScrollArea";
-import { Separator } from "../shadcn/Seperator";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/shadcn/Dialog";
+import { ScrollArea } from "@/components/shadcn/ScrollArea";
+import { Separator } from "@/components/shadcn/Seperator";
 
 const ProblemSubmissionSourceCodeAndRuntimeResultDialog = ({
 	submission,

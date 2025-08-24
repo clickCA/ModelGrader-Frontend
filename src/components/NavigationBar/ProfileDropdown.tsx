@@ -8,7 +8,7 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "../shadcn/DropdownMenu";
+} from "@/components/shadcn/DropdownMenu";
 
 import {
 	FileSpreadsheet,
@@ -18,7 +18,7 @@ import {
 	Users,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { AuthService } from "../../services/Auth.service";
+import { AuthService } from "@/services/Auth.service";
 
 const ProfileDropdown = ({ children }: { children: ReactNode }) => {
 	const navigate = useNavigate();

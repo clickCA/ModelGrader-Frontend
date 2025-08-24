@@ -3,10 +3,10 @@ import { useState } from "react";
 import {
     ProblemModel,
     ProblemPopulateTestcases,
-} from "../../../types/models/Problem.model";
-import { onMiddleClickOpenInNewTab } from "../../../utilities/OnMiddleClickOpenInNewTab";
-import MyProblemContextMenu from "../../ContextMenus/MyProblemContextMenu";
-import { Card } from "../../shadcn/Card";
+} from "@/types/models/Problem.model";
+import { onMiddleClickOpenInNewTab } from "@/utilities/OnMiddleClickOpenInNewTab";
+import MyProblemContextMenu from "@/components/ContextMenus/MyProblemContextMenu";
+import { Card } from "@/components/shadcn/Card";
 
 const MyProblemMiniCard2 = ({
 	problem,

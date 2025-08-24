@@ -1,5 +1,5 @@
 import PermissionSwitch from "../../Permissions/PermissionSwitch";
-import { Switch } from "../../shadcn/Switch";
+import { Switch } from "@/components/shadcn/Switch";
 
 const CollectionPermissionSwitchGroup = ({
 	manageCollectionsChecked = false,

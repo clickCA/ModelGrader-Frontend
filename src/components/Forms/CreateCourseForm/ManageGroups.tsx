@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { GroupService } from "../../../services/Group.service";
+import { GroupService } from "@/services/Group.service";
 import {
 	CourseGroupPermissionRequestForm,
 	CreateCourseRequestForm,
-} from "../../../types/forms/CreateCourseRequestForm";
-import { CollectionPopulateCollectionProblemPopulateProblemModel } from "../../../types/models/Collection.model";
-import { GroupModel } from "../../../types/models/Group.model";
+} from "@/types/forms/CreateCourseRequestForm";
+import { CollectionPopulateCollectionProblemPopulateProblemModel } from "@/types/models/Collection.model";
+import { GroupModel } from "@/types/models/Group.model";
 import MyCollectionMiniCard2 from "../../Cards/CollectionCards/MyCollectionMiniCard2";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
-import { Switch } from "../../shadcn/Switch";
-import { Tabs, TabsList, TabsTrigger } from "../../shadcn/Tabs";
+import { Switch } from "@/components/shadcn/Switch";
+import { Tabs, TabsList, TabsTrigger } from "@/components/shadcn/Tabs";
 import GroupAndPermissionManager, {
 	GroupAndPermissionManagerOnAddGroupsCallback,
 	GroupAndPermissionManagerOnRemoveGroupCallback,

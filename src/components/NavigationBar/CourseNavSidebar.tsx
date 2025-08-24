@@ -1,12 +1,12 @@
 import { ChevronRight, LibraryBig, X } from "lucide-react";
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CourseNavSidebarContext } from "../../contexts/CourseNavSidebarContexnt";
-import { TopicService } from "../../services/Topic.service";
-import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "../../types/models/Topic.model";
+import { CourseNavSidebarContext } from "../../contexts/CourseNavSidebarContext";
+import { TopicService } from "@/services/Topic.service";
+import { TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel } from "@/types/models/Topic.model";
 import NavbarCollectionsProblemsAccordion from "../NavbarCollectionsProblemsAccordion";
-import { ScrollArea } from "../shadcn/ScrollArea";
-import { Separator } from "../shadcn/Seperator";
+import { ScrollArea } from "@/components/shadcn/ScrollArea";
+import { Separator } from "@/components/shadcn/Seperator";
 
 const CourseNavSidebar = () => {
 	const navigate = useNavigate();
@@ -16,8 +16,6 @@ const CourseNavSidebar = () => {
 	const courseNavSidebarContext = useContext(CourseNavSidebarContext);
 	const { isOpen, setIsOpen, setSection, course, setCourse,setRecentOpenCollection } = courseNavSidebarContext;
 
-
-
 	useEffect(() => {
 		TopicService.getPublicByAccount(accountId, String(courseId)).then(
 			(response) => {
@@ -26,15 +24,6 @@ const CourseNavSidebar = () => {
 			}
 		);
 	}, [accountId, courseId]);
-
-	useEffect(() => {
-		console.log('open',isOpen)
-	},[isOpen])
-
-	// useEffect(()=>{
-	// 	// localStorage.setItem("recent_open_collection",JSON.stringify(recentOpenCollection))
-	// 	console.log('recent',recentOpenCollection)
-	// },[recentOpenCollection])
 
 	useEffect(() => {
 		const courseNavSidebarContextStorage = localStorage.getItem("courseNavSidebarContext")
@@ -49,8 +38,6 @@ const CourseNavSidebar = () => {
 	useEffect(() => {
 		localStorage.setItem("courseNavSidebarContext",JSON.stringify(courseNavSidebarContext))
 	},[ courseNavSidebarContext ])
-
-
 
 	return (
 		<>

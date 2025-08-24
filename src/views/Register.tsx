@@ -22,7 +22,7 @@ import {
 import { Input } from "../components/shadcn/Input";
 import { ErrorResponseTypes } from "../constants/ErrorResponseTypes";
 import CenterContainer from "../layout/CenterLayout";
-import { AccountService } from "../services/Account.service";
+import { AccountService } from "@/services/Account.service";
 
 type RegisterForm = {
 	username: string;

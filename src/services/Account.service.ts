@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { BASE_URL } from "../constants/BackendBaseURL";
-import { AccountServiceAPI } from "../types/apis/Account.api";
-import { AccountModel } from "../types/models/Account.model";
+import { AccountServiceAPI } from "@/types/apis/Account.api";
+import { AccountModel } from "@/types/models/Account.model";
 
 
 

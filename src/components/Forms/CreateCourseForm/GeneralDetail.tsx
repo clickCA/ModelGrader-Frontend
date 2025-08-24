@@ -1,9 +1,9 @@
 import React from 'react';
-import { CreateCourseRequestForm } from '../../../types/forms/CreateCourseRequestForm';
+import { CreateCourseRequestForm } from '@/types/forms/CreateCourseRequestForm';
 import DetailPlateEditor from '../../DetailPlateEditor';
-import { Input } from '../../shadcn/Input';
-import { Label } from '../../shadcn/Label';
-import { PlateEditorValueType } from '../../../types/PlateEditorValueType';
+import { Input } from '@/components/shadcn/Input';
+import { Label } from '@/components/shadcn/Label';
+import { PlateEditorValueType } from '@/types/PlateEditorValueType';
 
 const GeneralDetail = ({
 	createRequest,

@@ -15,6 +15,9 @@ export type CollectionModel = {
 	is_private: boolean;
 	created_date: string;
 	updated_date: string;
+	group_permissions: CollectionGroupPermissionModel[]
+	// TODO: Change to CollectionProblemModel[]
+	problems?: CollectionProblemPopulateProblemModel[]
 };
 
 export type CollectionPopulateProblemSecureModel = CollectionModel & {
@@ -75,7 +78,7 @@ export type CollectionPopulateCollectionProblemPopulateProblemModel =
 
 export type CollectionGroupPermissionModel = {
 	collection_group_permission_id: string;
-	group: string;
+	group: GroupModel;
 	permission_manage_collections: boolean;
 	permission_view_collections: boolean;
 	collection: string;

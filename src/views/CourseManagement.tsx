@@ -13,7 +13,6 @@ const CourseManagement = () => {
 			<div className="flex">
 				<div className="w-1/6 border-2 h-screen pt-10">
 					{/* <h1>Course Management</h1> */}
-
 					<Accordion type="single" collapsible className="w-full">
 						<AccordionItem value="item-1">
 							<AccordionTrigger>

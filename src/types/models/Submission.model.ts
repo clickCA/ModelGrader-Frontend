@@ -28,6 +28,7 @@ export type SubmissionModel = {
 	max_score: number;
 	passed_ratio: number;
 	account: number;
+    runtime_output?: SubmissionTestcaseModel[];
 };
 
 export type SubmissionPopulateProblemModel = {

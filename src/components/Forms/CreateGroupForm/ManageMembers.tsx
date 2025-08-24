@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
-import { AccountService } from "../../../services/Account.service";
-import { transformAccountModels2AccountHashedTable } from "../../../types/adapters/Account.adapter";
-import { CreateGroupRequestForm } from "../../../types/forms/CreateGroupRequestForm";
+import { AccountService } from "@/services/Account.service";
+import { transformAccountModels2AccountHashedTable } from "@/types/adapters/Account.adapter";
+import { CreateGroupRequestForm } from "@/types/forms/CreateGroupRequestForm";
 import {
 	AccountHashedTable,
 	AccountSecureModel,
-} from "../../../types/models/Account.model";
+} from "@/types/models/Account.model";
 import AccountMiniCard2 from "../../Cards/AccountCards/AccountMiniCard2";
-import { Button } from "../../shadcn/Button";
-import { Input } from "../../shadcn/Input";
-import { ScrollArea } from "../../shadcn/ScrollArea";
-import { Separator } from "../../shadcn/Seperator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../shadcn/Tabs";
+import { Button } from "@/components/shadcn/Button";
+import { Input } from "@/components/shadcn/Input";
+import { ScrollArea } from "@/components/shadcn/ScrollArea";
+import { Separator } from "@/components/shadcn/Seperator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn/Tabs";
 import { ItemInterface } from "./../../../../node_modules/react-sortablejs/dist/index.d";
 
 const ManageMembers = ({

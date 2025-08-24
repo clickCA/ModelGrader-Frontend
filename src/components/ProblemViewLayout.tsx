@@ -1,28 +1,27 @@
+import {
+    ProblemPoplulateCreatorModel,
+    ProblemPopulateCreatorSecureModel,
+} from "@/types/models/Problem.model";
+import {
+    GetSubmissionByAccountProblemResponse,
+    SubmissionPopulateSubmissionTestcasesSecureModel,
+} from "@/types/models/Submission.model";
+import { handleDeprecatedDescription } from "@/utilities/HandleDeprecatedDescription";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import { Editor as MonacoEditor } from "@monaco-editor/react";
-import { ArrowLeft, Check, Clipboard, Loader2 } from "lucide-react";
+import { Check, Clipboard, Loader2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ProgrammingLanguageOptions } from "../constants/ProgrammingLanguage";
-import {
-  ProblemPoplulateCreatorModel,
-  ProblemPopulateCreatorSecureModel,
-} from "../types/models/Problem.model";
-import {
-  GetSubmissionByAccountProblemResponse,
-  SubmissionPopulateSubmissionTestcasesSecureModel,
-} from "../types/models/Submission.model";
-import { handleDeprecatedDescription } from "../utilities/HandleDeprecatedDescription";
-import { readableDateFormat } from "../utilities/ReadableDateFormat";
 import PreviousSubmissionsCombobox from "./PreviousSubmissionsCombobox";
 import ReadOnlyPlate from "./ReadOnlyPlate";
 import TestcasesGradingIndicator from "./TestcasesGradingIndicator";
 import { Button } from "./shadcn/Button";
 import { Combobox } from "./shadcn/Combobox";
 import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
+    ResizableHandle,
+    ResizablePanel,
+    ResizablePanelGroup,
 } from "./shadcn/Resizable";
 import { Separator } from "./shadcn/Seperator";
 
@@ -46,7 +45,6 @@ const ProblemViewLayout = ({
   problem: ProblemPoplulateCreatorModel | ProblemPopulateCreatorSecureModel;
   previousSubmissions: GetSubmissionByAccountProblemResponse;
 }) => {
-  const navigate = useNavigate();
 
   // const [problem, setProblem] = useState<ProblemPoplulateCreatorModel>();
   const [selectedLanguage, setSelectedLanguage] = useState<string>("python");
@@ -122,11 +120,7 @@ const ProblemViewLayout = ({
       <ResizablePanel defaultSize={50} className="w-1/2 grid content-between">
         <div className="ml-3 ">
           <div className="text-3xl text-green-700 font-bold mb-2 flex">
-            <ArrowLeft
-              size={40}
-              className="cursor-pointer mr-2"
-              onClick={() => navigate(-1)}
-            />
+            
             {problem?.title}
           </div>
 

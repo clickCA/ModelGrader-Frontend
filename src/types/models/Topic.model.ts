@@ -11,6 +11,8 @@ export type TopicModel = {
     is_private: boolean
     created_date: string
     updated_date: string
+    // TODO: Change to TopicCollectionModel[]
+    collections?: TopicCollectionPopulateCollectionModel[]
 }
 
 export type TopicSecureModel = {
@@ -46,9 +48,9 @@ export type TopicCollectionPopulateCollectionPopulateCollectionProblemPopulatePr
     topic: number;
 }
 
-export type TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel = TopicSecureModel & {
-    collections: TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel[]
-}
+// export type TopicPopulateTopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel = TopicSecureModel & {
+//     collections: TopicCollectionPopulateCollectionPopulateCollectionProblemPopulateProblemPopulateAccountAndSubmissionPopulateSubmissionTestcasesSecureModel[]
+// }
 
 export type TopicPopulateTopicCollectionPopulateCollectionAndTopicGroupPermissionPopulateGroupModel = TopicModel & {
     collections: TopicCollectionPopulateCollectionModel[]

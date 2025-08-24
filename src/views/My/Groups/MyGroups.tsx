@@ -7,8 +7,8 @@ import { Button } from "../../../components/shadcn/Button";
 import { Input } from "../../../components/shadcn/Input";
 import { NavSidebarContext } from "../../../contexts/NavSidebarContext";
 import NavbarSidebarLayout from "../../../layout/NavbarSidebarLayout";
-import { GroupService } from "../../../services/Group.service";
-import { GroupPopulateGroupMemberPopulateAccountSecureModel } from "../../../types/models/Group.model";
+import { GroupService } from "@/services/Group.service";
+import { GroupPopulateGroupMemberPopulateAccountSecureModel } from "@/types/models/Group.model";
 
 const MyGroups = () => {
 

@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProgrammingLanguageOptions } from "../../../constants/ProgrammingLanguage";
-import { ProblemPopulateTestcases } from "../../../types/models/Problem.model";
-import { checkRuntimeStatus } from "../../../utilities/CheckRuntimeStatus";
-import { readableDateFormat } from "../../../utilities/ReadableDateFormat";
+import { ProblemPopulateTestcases } from "@/types/models/Problem.model";
+import { checkRuntimeStatus } from "@/utilities/CheckRuntimeStatus";
+import { readableDateFormat } from "@/utilities/ReadableDateFormat";
 import MyProblemDropdown from "../../Dropdowns/MyProblemDropdown";
 import { DataTable } from "../Prototype/DataTable";
 import DataTableSortableLayout from "../Prototype/DataTableSortableLayout";
@@ -20,8 +20,8 @@ import {
 	HoverCard,
 	HoverCardContent,
 	HoverCardTrigger,
-} from "../../shadcn/HoverCard";
-import { Badge } from "../../shadcn/Badge";
+} from "@/components/shadcn/HoverCard";
+import { Badge } from "@/components/shadcn/Badge";
 
 const columns: ColumnDef<ProblemPopulateTestcases>[] = [
 	{

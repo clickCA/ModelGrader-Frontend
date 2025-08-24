@@ -1,5 +1,5 @@
 import React from "react";
-import { CreateGroupRequestForm } from "../../../types/forms/CreateGroupRequestForm";
+import { CreateGroupRequestForm } from "@/types/forms/CreateGroupRequestForm";
 import PermissionSwitchScrollArea from "../../Permissions/PermissionSwitchScrollArea";
 import CollectionPermissionSwitchGroup from "../PermissionSwitchGroups/CollectionPermissionSwitchGroup";
 import CoursePermissionSwitchGroup from "../PermissionSwitchGroups/CoursePermissionSwitchGroup";
