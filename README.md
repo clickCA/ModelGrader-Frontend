@@ -23,4 +23,5 @@ To run the linter:
 npm run lint
 ```
 
+
 For more advanced configuration options, refer to the [oxlint documentation](https://oxc-project.github.io/docs/guide/usage/linter.html).
